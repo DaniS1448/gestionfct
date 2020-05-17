@@ -4,8 +4,8 @@ PRIMEROS PASOS APLICACIÓN
 -----------------
 	1. Meter lista alumnos
 	2. Elegir que día empezar y cuántos días (horas)
-	3. Poder bloquear algunas empresas, filtrar por calidad y familia -> área
-	4. Mostrar sugerencia asignación automática alumnos en prácticas
+	3. Mostrar sugerencia asignación automática alumnos en prácticas
+	4. Poder bloquear algunas empresas, filtrar por calidad y familia -> área
 	5. Poder ajustar fácilmente alumnos en empresas
 
 
