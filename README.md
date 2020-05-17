@@ -73,3 +73,5 @@ INFO EXTRA
 - Para intranet centro (seguridad no crítica) / Poder acceder desde fuera
 - Roles
 
+###### EJEMPLO FAMILIA PROFESIONAL (Informática y comunicaciones)
+![Modelo1](https://github.com/DaniS1448/gestionfct/blob/master/famili_profesional_informatica_y_comunicaciones.JPG)
