@@ -31,26 +31,27 @@ MODELO 1
 ![Modelo1](https://github.com/DaniS1448/gestionfct/blob/master/modelo1.png)
 
 
-FUNCIONALIDADES
+FUNCIONALIDADES (marcadas las posibles con el modelo 1)
 ------------------
-- Alumnos asignados a cada empresa
-- Historial alumnos contratados por dicha empresa
-- Infromes de las empresas
-- Trabajo con **posibles empresas** [enganchar a una feed de empresa (de convenios si es posible))
-- Informar cuántas plazas faltan por buscar, zona no lejana..
-- Asignación sugerida automática (empresa-alumno)
-- La empresa más adecuada para cada persona
-- Asignación inicial que pueda ir cambiando
-- Cambio de alumno de empresa en medio de la prácticas
-- Calendario fiestas automáticas localidades madrid (configurar alumno tantos días empezando tal día)
-- Log estado de la conversacióin con la empresa (día 17 mandar o recibir un documento) - hitos prática estados
-- Valoración de la empresa (por alumnos) [trato, si contrata o no, flexibilidad...]
-- Perfil de la empresa (Back, Front, Peluquería) si son expernos en JAVA, C#... ÁREAS DE ENFOQUE
-- Meter los alumnos de golpe y la APP haga un reparto provisional y luego poder cambiar de sitio a los alumnos.
-- Filtrar por familia -> informática -> geolocalización (verde - convenio | naranja - posibles empresas)
-- Historial alumnos prácticas en SMR y en DAW y otras...
-- Empresa con convenio y sin convenio -> enviar gente por bolsa de empleo
-- Gestion información convenios (empresas) y anexos(alumnos)
+- [x] Alumnos asignados a cada empresa
+- [x] Historial alumnos contratados por dicha empresa
+- [x] Perfil de la empresa (Back, Front, Peluquería) si son expernos en JAVA, C#... ÁREAS DE ENFOQUE
+- [x] Perfiles de interés por el alumno
+- [x] Historial alumnos prácticas en SMR y en DAW y otras...
+- [x] Empresa con convenio y sin convenio -> enviar gente por bolsa de empleo
+- [x] Filtrar por familia -> informática -> geolocalización (verde - convenio | naranja - posibles empresas)
+- [x] Infromes de las empresas
+- [x] Informar cuántas plazas faltan por buscar, zona no lejana..
+- [x] Valoración de la empresa (por alumnos) [trato, si contrata o no, flexibilidad...]
+- [x] Asignación sugerida automática (empresa-alumno)
+- [x] La empresa más adecuada para cada persona
+- [x] Asignación inicial que pueda ir cambiando
+- [x] Cambio de alumno de empresa en medio de la prácticas
+- [x] Log estado de la conversacióin con la empresa (día 17 mandar o recibir un documento) - hitos prática estados
+- [x] Meter los alumnos de golpe y la APP haga un reparto provisional y luego poder cambiar de sitio a los alumnos.
+- [ ] Calendario fiestas automáticas localidades madrid (configurar alumno tantos días empezando tal día)
+- [ ] Trabajo con **posibles empresas** [enganchar a una feed de empresa (de convenios si es posible))
+- [ ] Gestion información convenios (empresas) y anexos(alumnos)
 
 
 INFO EXTRA
