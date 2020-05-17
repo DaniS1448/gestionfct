@@ -26,6 +26,9 @@ PENDIENTE
 - Alumnos asignados a cada empresa
 - Referencia alumnos vayan junto a las prácticas (cercanía opcional para algunos)
 
+MODELO 1
+-------
+![Modelo1](https://github.com/DaniS1448/gestionfct/blob/master/modelo1.png)
 
 FUNCIONALIDADES
 ------------------
@@ -67,6 +70,4 @@ INFO EXTRA
 - Si cambia en medio de la práctica sería otra práctica
 - Para intranet centro (seguridad no crítica) / Poder acceder desde fuera
 
-MODELO 1
--------
-![Modelo1](https://github.com/DaniS1448/gestionfct/blob/master/modelo1.png)
+
