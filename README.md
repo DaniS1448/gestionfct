@@ -20,10 +20,8 @@ PENDIENTE
 -----------
 - Calendarios de cada persona (fiestas por localidad) - Geolocalización en cada empresa
 - Provisional (hay alumnos que no aprueban) - Viabilidad (1. Todo aprobado | 2. Al menos un suspenso | 3. Más de un suspenso)
-- Referencia alumnos vayan junto a las prácticas (cercanía opcional para algunos)
 - Almacenar información partes semanales
 - ANEXO MADRID - PROGRAMA FORMATIO - CALENDARIO (fiestas localidad)
-
 
 
 MODELO 1
@@ -49,6 +47,7 @@ FUNCIONALIDADES (marcadas las posibles con el modelo 1)
 - [x] Cambio de alumno de empresa en medio de la prácticas
 - [x] Log estado de la conversacióin con la empresa (día 17 mandar o recibir un documento) - hitos prática estados
 - [x] Meter los alumnos de golpe y la APP haga un reparto provisional y luego poder cambiar de sitio a los alumnos.
+- [x] Referencia alumnos vayan junto a las prácticas (cercanía opcional para algunos)
 - [ ] Calendario fiestas automáticas localidades madrid (configurar alumno tantos días empezando tal día)
 - [ ] Trabajo con **posibles empresas** [enganchar a una feed de empresa (de convenios si es posible))
 - [ ] Gestion información convenios (empresas) y anexos(alumnos)
