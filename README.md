@@ -5,7 +5,8 @@ PRIMEROS PASOS APLICACIÓN
 	1. Meter lista alumnos
 	2. Elegir que día empezar y cuántos días (horas)
 	3. Poder bloquear algunas empresas, filtrar por calidad y familia -> área
-	4. Poder ajustar fácilmente alumnos en empresas
+	4. Mostrar sugerencia asignación automática alumnos en prácticas
+	5. Poder ajustar fácilmente alumnos en empresas
 
 
 NECESITO
@@ -65,3 +66,7 @@ INFO EXTRA
 - Práctica - Realización de una estancia en un periodo en una empresa de un alumno.
 - Si cambia en medio de la práctica sería otra práctica
 - Para intranet centro (seguridad no crítica) / Poder acceder desde fuera
+
+MODELO 1
+-------
+![Modelo1](https://github.com/DaniS1448/gestionfct/blob/master/modelo1.png)
