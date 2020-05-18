@@ -23,13 +23,15 @@ PENDIENTE
 - Almacenar información partes semanales
 - ANEXO MADRID - PROGRAMA FORMATIO - CALENDARIO (fiestas localidad)
 
-
-MODELO 1
+MODELO 1 - UML Simplificado
 -------
-![Modelo1](https://github.com/DaniS1448/gestionfct/blob/master/modelo1.png)
+![Modelo1-uml-simplificado](https://yuml.me/danis1448/gestionfct_simplificado.png)
 
+MODELO 1 - UML Completo
+-------
+![Modelo1-uml-completo](https://yuml.me/danis1448/gestionfct.png)
 
-FUNCIONALIDADES (marcadas las posibles con el modelo 1)
+FUNCIONALIDADES (marcadas las posibles con el modelo 1 completo)
 ------------------
 - [x] Alumnos asignados a cada empresa
 - [x] Historial alumnos contratados por dicha empresa
@@ -52,6 +54,10 @@ FUNCIONALIDADES (marcadas las posibles con el modelo 1)
 - [ ] Trabajo con **posibles empresas** [enganchar a una feed de empresa (de convenios si es posible))
 - [ ] Gestion información convenios (empresas) y anexos(alumnos)
 
+
+MODELO 1 BBDD Completo
+-------
+![Modelo1](https://github.com/DaniS1448/gestionfct/blob/master/modelo1.png)
 
 INFO EXTRA
 ----------
