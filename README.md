@@ -1,29 +1,5 @@
 # gestionfct
 
-SEGUNDA REUNIÓN
------------------
-- [x] Empresa -> sede (pueden ser varias)
-- [x] Responsables en empresa (Resp. convenio, contacto - RRHH, tutor - puede ser por cada alumno)
-- [x] Anexo (GrupoPracticas) => sede | anexo es un grupo de prácticas que van a una sede
-- [x] practica => usuario (tutor profesor instituto)
-- [x] practica => responsable (tutor)
-- [x] Convenio/Anexo - add campo subir archivo(foto/pdf)
-- [x] campo distancia_opcional debe ir en práctica
-- [x] practica add convocatoria - ordinaria/extraordinaria (marzo/septiembre)
-- [x] renombrar matricula a CursoAcademico
-- [x] practica add campo horas/día
-- [x] perfil renombrar tags (many to many)
-- [x] ANEXO add campo numero
-
-PRIMEROS PASOS APLICACIÓN
------------------
-	1. Meter lista alumnos
-	2. Elegir que día empezar y cuántos días (horas)
-	3. Mostrar sugerencia asignación automática alumnos en prácticas
-	4. Poder bloquear algunas empresas, filtrar por calidad y familia -> área
-	5. Poder ajustar fácilmente alumnos en empresas
-
-
 NECESITO
 ---------
 	- [ ] Modelo ANEXO que Leticia manda a las empresas
@@ -71,9 +47,30 @@ FUNCIONALIDADES (marcadas las posibles con el modelo 1 completo)
 - [ ] Gestion información convenios (empresas) y anexos(alumnos)
 
 
-MODELO 1 BBDD Completo
--------
-![Modelo1](https://github.com/DaniS1448/gestionfct/blob/master/modelo1.png)
+PRIMEROS PASOS APLICACIÓN
+-----------------
+	1. Meter lista alumnos
+	2. Elegir que día empezar y cuántos días (horas)
+	3. Mostrar sugerencia asignación automática alumnos en prácticas
+	4. Poder bloquear algunas empresas, filtrar por calidad y familia -> área
+	5. Poder ajustar fácilmente alumnos en empresas
+
+
+SEGUNDA REUNIÓN
+-----------------
+- [x] Empresa -> sede (pueden ser varias)
+- [x] Responsables en empresa (Resp. convenio, contacto - RRHH, tutor - puede ser por cada alumno)
+- [x] Anexo (GrupoPracticas) => sede | anexo es un grupo de prácticas que van a una sede
+- [x] practica => usuario (tutor profesor instituto)
+- [x] practica => responsable (tutor)
+- [x] Convenio/Anexo - add campo subir archivo(foto/pdf)
+- [x] campo distancia_opcional debe ir en práctica
+- [x] practica add convocatoria - ordinaria/extraordinaria (marzo/septiembre)
+- [x] renombrar matricula a CursoAcademico
+- [x] practica add campo horas/día
+- [x] perfil renombrar tags (many to many)
+- [x] ANEXO add campo numero
+
 
 INFO EXTRA
 ----------
