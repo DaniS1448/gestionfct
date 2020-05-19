@@ -43,9 +43,9 @@ FUNCIONALIDADES (marcadas las posibles con el modelo 1 completo)
 - [x] Meter los alumnos de golpe y la APP haga un reparto provisional y luego poder cambiar de sitio a los alumnos.
 - [x] Referencia alumnos vayan junto a las prácticas (cercanía opcional para algunos)
 - [x] Almacenar información partes semanales
+- [x] Gestion información convenios (empresas) y anexos(alumnos)
 - [ ] Calendario fiestas automáticas localidades madrid (configurar alumno tantos días empezando tal día)
 - [ ] Trabajo con **posibles empresas** [enganchar a una feed de empresa (de convenios si es posible))
-- [ ] Gestion información convenios (empresas) y anexos(alumnos)
 
 
 PRIMEROS PASOS APLICACIÓN
