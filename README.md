@@ -1,5 +1,20 @@
 # gestionfct
 
+SEGUNDA REUNIÓN
+-----------------
+- [ ] Empresa -> sede (pueden ser varias)
+- [ ] Responsables en empresa (Resp. convenio, contacto - RRHH, tutor - puede ser por cada alumno)
+- [ ] GrupoPracticas => sede
+- [ ] practica => usuario (tutor profesor instituto)
+- [ ] Convenio - add campo subir archivo(foto/pdf)
+- [ ] anexo es un grupo de prácticas que van a una sede
+- [ ] campo distancia_opcional debe ir en práctica
+- [ ] practica add convocatoria - ordinaria/extraordinaria (marzo/septiembre)
+- [ ] renombrar matricula a CursoAcademico
+- [ ] practica add campo horas/día
+- [ ] perfil renombrar tags (many to many)
+- [ ] ANEXO add campo numero
+
 PRIMEROS PASOS APLICACIÓN
 -----------------
 	1. Meter lista alumnos
@@ -11,9 +26,9 @@ PRIMEROS PASOS APLICACIÓN
 
 NECESITO
 ---------
-	- Modelo ANEXO que Leticia manda a las empresas
-	- BBDD/Modelo antiguo Guillermo
-	- DUDA | Cuando se hace la práctica en 2 empresas, son en el mismo anexo o es un anexo por cada práctica en cada empresa?
+	- [ ] Modelo ANEXO que Leticia manda a las empresas
+	- [x] BBDD/Modelo antiguo Guillermo
+	- [x] DUDA | Cuando se hace la práctica en 2 empresas, son en el mismo anexo o es un anexo por cada práctica en cada empresa
 
 
 PENDIENTE
@@ -22,6 +37,7 @@ PENDIENTE
 - Provisional (hay alumnos que no aprueban) - Viabilidad (1. Todo aprobado | 2. Al menos un suspenso | 3. Más de un suspenso)
 - Almacenar información partes semanales
 - ANEXO MADRID - PROGRAMA FORMATIO - CALENDARIO (fiestas localidad)
+- ¿Distribución? dieferntes simulaciones/borradores y uno final (real/hipotético)
 
 MODELO 1 - UML Simplificado
 -------
