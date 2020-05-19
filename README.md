@@ -93,4 +93,7 @@ INFO EXTRA
 - Roles
 
 ###### EJEMPLO FAMILIA PROFESIONAL (Informática y comunicaciones)
-![Modelo1](https://github.com/DaniS1448/gestionfct/blob/master/famili_profesional_informatica_y_comunicaciones.JPG)
+![EjemploFamiliaProf](https://github.com/DaniS1448/gestionfct/blob/master/famili_profesional_informatica_y_comunicaciones.JPG)
+
+###### EJEMPLO INSTITUTO (Rey Fernando VI)
+![EjemploInstitutoo](https://github.com/DaniS1448/gestionfct/blob/master/instituto.PNG)
