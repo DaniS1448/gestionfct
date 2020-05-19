@@ -10,10 +10,11 @@ NECESITO
 PENDIENTE
 -----------
 - Calendarios de cada persona (fiestas por localidad) - Geolocalización en cada empresa
-- Provisional (hay alumnos que no aprueban) - Viabilidad (1. Todo aprobado | 2. Al menos un suspenso | 3. Más de un suspenso)
 - Almacenar información partes semanales
 - ANEXO MADRID - PROGRAMA FORMATIO - CALENDARIO (fiestas localidad)
-- ¿Distribución? dieferntes simulaciones/borradores y uno final (real/hipotético)
+- <del>Provisional (hay alumnos que no aprueban) - Viabilidad (1. Todo aprobado | 2. Al menos un suspenso | 3. Más de un suspenso)</del>
+- <del>¿Distribución? dieferntes simulaciones/borradores y uno final (real/hipotético)</del>
+
 
 MODELO 1 - UML Simplificado
 -------
