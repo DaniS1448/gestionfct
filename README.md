@@ -73,7 +73,7 @@ SEGUNDA REUNIÓN
 - [x] ANEXO add campo numero
 
 
-INFO EXTRA
+PRIMERA REUNIÓN
 ----------
 - Familias profesionales en cada empresas
 - El anexo se crea en la APP de la Comunidad de Madrid (el papeleo de firmar anexo)
