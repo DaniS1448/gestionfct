@@ -2,18 +2,18 @@
 
 SEGUNDA REUNIÓN
 -----------------
-- [ ] Empresa -> sede (pueden ser varias)
-- [ ] Responsables en empresa (Resp. convenio, contacto - RRHH, tutor - puede ser por cada alumno)
-- [ ] GrupoPracticas => sede
-- [ ] practica => usuario (tutor profesor instituto)
-- [ ] Convenio - add campo subir archivo(foto/pdf)
-- [ ] anexo es un grupo de prácticas que van a una sede
-- [ ] campo distancia_opcional debe ir en práctica
-- [ ] practica add convocatoria - ordinaria/extraordinaria (marzo/septiembre)
-- [ ] renombrar matricula a CursoAcademico
-- [ ] practica add campo horas/día
-- [ ] perfil renombrar tags (many to many)
-- [ ] ANEXO add campo numero
+- [x] Empresa -> sede (pueden ser varias)
+- [x] Responsables en empresa (Resp. convenio, contacto - RRHH, tutor - puede ser por cada alumno)
+- [x] Anexo (GrupoPracticas) => sede | anexo es un grupo de prácticas que van a una sede
+- [x] practica => usuario (tutor profesor instituto)
+- [x] practica => responsable (tutor)
+- [x] Convenio/Anexo - add campo subir archivo(foto/pdf)
+- [x] campo distancia_opcional debe ir en práctica
+- [x] practica add convocatoria - ordinaria/extraordinaria (marzo/septiembre)
+- [x] renombrar matricula a CursoAcademico
+- [x] practica add campo horas/día
+- [x] perfil renombrar tags (many to many)
+- [x] ANEXO add campo numero
 
 PRIMEROS PASOS APLICACIÓN
 -----------------
