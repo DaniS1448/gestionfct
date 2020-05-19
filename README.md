@@ -3,9 +3,9 @@
 NECESITO
 ---------
 	- [ ] Modelo ANEXO que Leticia manda a las empresas
+	- [ ] DUDA | PrevisionPuestos vinculada con Empresa o con Sede
 	- [x] BBDD/Modelo antiguo Guillermo
 	- [x] DUDA | Cuando se hace la práctica en 2 empresas, son en el mismo anexo o es un anexo por cada práctica en cada empresa
-
 
 PENDIENTE
 -----------
