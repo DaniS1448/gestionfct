@@ -46,6 +46,7 @@ FUNCIONALIDADES (marcadas las posibles con el modelo 1 completo)
 - [x] Gestion información convenios (empresas) y anexos(alumnos)
 - [ ] Calendario fiestas automáticas localidades madrid (configurar alumno tantos días empezando tal día)
 - [ ] Trabajo con **posibles empresas** [enganchar a una feed de empresa (de convenios si es posible))
+- [ ] Tutorial primeros pasos que indique cada función en parte en la página web
 
 
 PRIMEROS PASOS APLICACIÓN
