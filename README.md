@@ -4,8 +4,9 @@
 
 NECESITO
 ---------
-	- [ ] Modelo ANEXO que Leticia manda a las empresas
-	- [ ] DUDA | PrevisionPuestos vinculada con Empresa o con Sede
+	- [ ] Necesito excel ejemplo con los alumnos de otro sitio (Leticia de la lista de alumnos del centro)
+	- [x] Modelo ANEXO que Leticia manda a las empresas
+	- [x] DUDA | PrevisionPuestos vinculada con Empresa o con Sede
 	- [x] BBDD/Modelo antiguo Guillermo
 	- [x] DUDA | Cuando se hace la práctica en 2 empresas, son en el mismo anexo o es un anexo por cada práctica en cada empresa
 
@@ -60,7 +61,31 @@ PRIMEROS PASOS APLICACIÓN
 	5. Poder ajustar fácilmente alumnos en empresas
 
 
-SEGUNDA REUNIÓN
+TERCERA REUNIÓN (26 de mayo de 2020)
+-----------------
+- [ ] CRUD | Añadir, borrar fiestas
+- [ ] Mokcup
+	- [ ] Add alumnos por inputs o archivo csv(excel)
+	- [ ] Al añadir alumno que ya existe (avisar y decidir qué hacer con él)
+	- [ ] ASIGNACIÓN PASO 1 - Solo nombres
+	- [ ] ASIGNACIÓN PASO 2 - con fecha comienzo, horas/día y horas totales
+	- [ ] ASIGNACIÓN PASO 3 - con horario laborable y tutor
+	- [ ] ASIGNACIÓN PASO FINAL - Resúmen últil para alumno, días de fiestas, y horario laborable, etc...)
+	- [ ] Historial empresas de años pasados (cuántos alumnos han tenido, cuántos han contratado)
+- [ ] Responsable -> TutorEmpresa y quitar entidad tipo
+- [ ] Add campos empresa (ResponsableConvenio, ResponsableRRHH (nombre, telefono, email))
+- [ ] Anexo puede tener modificaciones (diferentes archivos para subir) identificados por NumeroAnexo
+	- Resúmen
+		- [ ] Nº del ANEXO
+		- [ ] Empresa(sede):
+		- [ ] Fehca inicio:
+		- [ ] Fecha fin:
+		- [ ] Días de la semana: Lunes,Martes,Miércoles,Jueves,Viernes
+		- [ ] Horario (Por días con horario mañana (hora inicio y hora fin) + horario tarde (hora inicio y hora fin) = total horas
+		- [ ] Listado Alumnos (Apellidos y Nombre + DNI)
+		- [ ] Tutor centro de trabajo y tutor instituto (opcional)
+
+SEGUNDA REUNIÓN (19 de mayo de 2020)
 -----------------
 - [x] Empresa -> sede (pueden ser varias)
 - [x] Responsables en empresa (Resp. convenio, contacto - RRHH, tutor - puede ser por cada alumno)
@@ -76,7 +101,7 @@ SEGUNDA REUNIÓN
 - [x] ANEXO add campo numero
 
 
-PRIMERA REUNIÓN
+PRIMERA REUNIÓN (12 de mayo de 2020)
 ----------
 - Familias profesionales en cada empresas
 - El anexo se crea en la APP de la Comunidad de Madrid (el papeleo de firmar anexo)
