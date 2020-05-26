@@ -5,7 +5,7 @@
 NECESITO
 ---------
 	- [ ] Necesito excel ejemplo con los alumnos de otro sitio (Leticia de la lista de alumnos del centro)
-	- [ ] DUDA | En el mismo anexo, pueden haber alumnos con diferentes horarios?
+	- [ ] DUDA | En el mismo anexo, pueden haber alumnos con diferentes horarios y diferentes fechas inicio y fin?
 	- [ ] DUDA | Una empresa que tiene convenio con dos insitutos, es el mismo convenio o uno con cada instituto?
 	- [x] Modelo ANEXO que Leticia manda a las empresas
 	- [x] DUDA | PrevisionPuestos vinculada con Empresa o con Sede
