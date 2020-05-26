@@ -20,11 +20,11 @@ PENDIENTE
 
 MODELO 1 - UML Simplificado
 -------
-![Modelo1-uml-simplificado](https://yuml.me/danis1448/gestionfct_simplificado.png)
+![Modelo1-uml-simplificado](https://yuml.me/danis1448/gestionfct_simplificado.jpg)
 
 MODELO 1 - UML Completo
 -------
-![Modelo1-uml-completo](https://yuml.me/danis1448/gestionfct.png)
+![Modelo1-uml-completo](https://yuml.me/danis1448/gestionfct.jpg)
 
 FUNCIONALIDADES (marcadas las posibles con el modelo 1 completo)
 ------------------
@@ -72,10 +72,10 @@ TERCERA REUNIÓN (26 de mayo de 2020)
 	- [ ] ASIGNACIÓN PASO 3 - con horario laborable y tutor
 	- [ ] ASIGNACIÓN PASO FINAL - Resúmen últil para alumno, días de fiestas, y horario laborable, etc...)
 	- [ ] Historial empresas de años pasados (cuántos alumnos han tenido, cuántos han contratado)
-- [ ] Responsable -> TutorEmpresa y quitar entidad tipo
-- [ ] Add campos empresa (ResponsableConvenio, ResponsableRRHH (nombre, telefono, email))
-- [ ] Anexo puede tener modificaciones (diferentes archivos para subir) identificados por NumeroAnexo
-	- Resúmen
+- [x] Responsable -> TutorEmpresa y quitar entidad tipo
+- [x] Add campos empresa (ResponsableConvenio, ResponsableRRHH (nombre, telefono, email))
+- [x] Anexo puede tener modificaciones (diferentes archivos para subir) identificados por NumeroAnexo
+	- Resúmen anexo
 		- [ ] Nº del ANEXO
 		- [ ] Empresa(sede):
 		- [ ] Fehca inicio:
