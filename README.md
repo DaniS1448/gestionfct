@@ -5,6 +5,7 @@
 NECESITO
 ---------
 	- [ ] Necesito excel ejemplo con los alumnos de otro sitio (Leticia de la lista de alumnos del centro)
+	- [ ] DUDA | En el mismo anexo, pueden haber alumnos con diferentes horarios?
 	- [ ] DUDA | Una empresa que tiene convenio con dos insitutos, es el mismo convenio o uno con cada instituto?
 	- [x] Modelo ANEXO que Leticia manda a las empresas
 	- [x] DUDA | PrevisionPuestos vinculada con Empresa o con Sede
@@ -68,8 +69,8 @@ TERCERA REUNIÓN (26 de mayo de 2020)
 - [ ] Mokcup
 	- [ ] Add alumnos por inputs o archivo csv(excel)
 	- [ ] Al añadir alumno que ya existe (avisar y decidir qué hacer con él)
-	- [ ] ASIGNACIÓN PASO 1 - Solo nombres
-	- [ ] ASIGNACIÓN PASO 2 - con fecha comienzo, horas/día y horas totales
+	- [x] ASIGNACIÓN PASO 1 - Solo nombres
+	- [x] ASIGNACIÓN PASO 2 - con fecha comienzo, horas/día y horas totales
 	- [ ] ASIGNACIÓN PASO 3 - con horario laborable y tutor
 	- [ ] ASIGNACIÓN PASO FINAL - Resúmen últil para alumno, días de fiestas, y horario laborable, etc...)
 	- [ ] Historial empresas de años pasados (cuántos alumnos han tenido, cuántos han contratado)
