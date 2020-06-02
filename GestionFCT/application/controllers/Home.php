@@ -5,7 +5,9 @@ class Home extends CI_Controller
     
     public function index()
     {
-        frame($this, 'home/index');
+        $data['modals']=['modalLogin'];
+        $data['scripts']=['login'];
+        frame($this, 'home/index',$data);
     }
     
     public function test(){

@@ -8,8 +8,13 @@ function frame($controller,$view,$data=[]) {
     $data['modals'] = isset($data['modals']) ? $data['modals'] : [];
     
     //Aquí van los modals necesarios en todas las vistas
-    $data['modals'][]='modalMsg';
+    $data['modals'][]='modalErrores';
     
+    //Si no recibe scripts, ce crea array vacío
+    $data['scripts'] = isset($data['scripts']) ? $data['scripts'] : [];
+    
+    //Aquí van los scripts necesarios en todas las vistas
+    $data['scripts'][]='principal';
     
     $controller->load->view('_templates/01-head',$data);
     $controller->load->view('_templates/02-nav',$data);

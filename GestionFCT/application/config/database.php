@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
     'dsn'	=> '',
-    'hostname' => 'daw2.ga',
-    'username' => 'daw2_ehub',
-    'password' => 'VnLpaIEsf5',
-    'database' => 'daw2_eventhub',
+    'hostname' => 'localhost',
+    'username' => 'root',
+    'password' => '',
+    'database' => 'gestionfct',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,

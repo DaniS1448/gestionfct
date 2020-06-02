@@ -40,3 +40,10 @@ function mostrarModalError(tipo = "warning", mensaje="No hay mensajes", volver="
 	
 	$('#modalErrores').modal();
 }
+
+function desactivarBoton($id, $milisegundos){
+	document.getElementById($id).disabled = true;
+	setTimeout(function() {
+		document.getElementById($id).disabled = false;
+	}, $milisegundos);
+}
