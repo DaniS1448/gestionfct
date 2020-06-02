@@ -63,6 +63,11 @@ PRIMEROS PASOS APLICACIÓN
 	5. Poder ajustar fácilmente alumnos en empresas
 
 
+CUARTA REUNIÓN (2 de junio de 2020)
+-----------------
+- [ ] El usuario administre solo sus prácticas, al volver a hacer login vuelva a conectar con sus practicas
+- [ ] Que el usuario solo tenga acceso a los alumnos de los grupos a los que pertenece
+
 TERCERA REUNIÓN (26 de mayo de 2020)
 -----------------
 - [ ] CRUD | Añadir, borrar fiestas
