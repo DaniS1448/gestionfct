@@ -97,7 +97,7 @@ class Usuario extends CI_Controller
             if ($esAjax) {
                 $email = isset($_POST['email'])?$_POST['email']:null;
                 $respuesta['estado']=false;
-                $respuesta['mensaje']="¡Los datos no son correctos, compruebe que el mail es correcto!";
+                $respuesta['mensaje']="¡Comprueba que el mail sea correcto!";
                 if($email != null && $this->usuario_model->cambiarVerifKey($email)){
                     $this->load->helper("mimail_helper");
                     $usuario = $this->usuario_model->getUsuarioByEmail($email);
