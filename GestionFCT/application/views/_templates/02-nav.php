@@ -20,8 +20,10 @@
       </ul>
       <ul class="nav navbar-nav ml-auto nav-flex-icons">
       	<li class="nav-item" role="presentation"><a class="nav-link active" href="<?= base_url(); ?>">Home</a></li>
+      	
          
          <?php if(isset($_SESSION['user'])):?>
+         <li><span class="nav-link">Bienvenid@ <?= $_SESSION['user']->nombre ?></span></li>
          <li class="nav-item avatar dropdown btn p-0">
             <a class="nav-link pt-0 dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
