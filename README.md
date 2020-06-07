@@ -18,6 +18,7 @@ PENDIENTE
 - ANEXO MADRID - PROGRAMA FORMATIO - CALENDARIO (fiestas localidad)
 - <del>Provisional (hay alumnos que no aprueban) - Viabilidad (1. Todo aprobado | 2. Al menos un suspenso | 3. Más de un suspenso)</del>
 - <del>¿Distribución? dieferntes simulaciones/borradores y uno final (real/hipotético)</del>
+- Dashboard admin/auth acciones + estadísticas
 
 
 MODELO 1 - UML Simplificado
