@@ -1,4 +1,4 @@
-<section id="info" class="content-section mb-5" style="margin-top:10%;">
+<section id="info" class="content-section mb-5" style="margin-top:5%;">
 <!--Content-->
      <div class="modal-content m-auto" style="width:50%;">
        <!--Header-->

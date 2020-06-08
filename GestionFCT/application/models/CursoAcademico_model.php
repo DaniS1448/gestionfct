@@ -16,7 +16,7 @@ class CursoAcademico_model extends CI_Model
         $ca = R::findOne('cursoacademico','anyoini=?',[$anyoini]);
         $ok = ($ca==null && $anyoini!=null);
         if ($ok) {
-            $ca = R::dispense('pais');
+            $ca = R::dispense('cursoacademico');
             $ca->anyoini = $anyoini;
             R::store($ca);
         }

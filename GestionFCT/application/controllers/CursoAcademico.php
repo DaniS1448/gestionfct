@@ -12,12 +12,6 @@ class CursoAcademico extends CI_Controller
         frame($this, "cursoAcademico/c");
     }
     
-    public function ajaxCPost(){
-        if(esAjax()){
-            
-        }
-    }
-    
     public function cPost(){
         verificarRol("admin");
         $anyoini = isset($_POST["anyoini"])?$_POST["anyoini"]:null;
@@ -33,7 +27,7 @@ class CursoAcademico extends CI_Controller
             if($idCursoAnterior==null){
                 try {
                     $this->cursoAcademico_model->c($anyoini);
-                    redirect(base_url() . '/');
+                    redirect(base_url());
                 }
                 catch (Exception $e) {
                     session_start_seguro();
@@ -43,7 +37,7 @@ class CursoAcademico extends CI_Controller
                     redirect(base_url() . 'msg');
                 }
             } else {
-                
+                //TODO crear curso duplicando anterior
             }
         }
         
