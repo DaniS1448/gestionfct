@@ -5,11 +5,11 @@ function crearCursoAcademico(){
 	var selectCursosAcademicosAnteriores = document.getElementById("selectCursosAcademicosAnteriores").value;
 
 	if(anyoini==""){
-		mostrarElemento("err-crearCursoAcademico");
-		ocultarElemento("ok-crearCursoAcademico");
+		mostrarElementoById("err-crearCursoAcademico");
+		ocultarElementoById("ok-crearCursoAcademico");
 		mensajeErr.innerHTML="El año de cominezo no puede estar vacío";
 	} else {
-		ocultarElementos(["err-crearCursoAcademico","ok-crearCursoAcademico"]);
+		ocultarElementosById(["err-crearCursoAcademico","ok-crearCursoAcademico"]);
 		var datos="anyoini="+anyoini;
 		if(document.getElementById("formCheckDuplicarCurso").checked && selectCursosAcademicosAnteriores!=""){
 			datos+="&selectCursosAcademicosAnteriores="+selectCursosAcademicosAnteriores;
@@ -31,7 +31,7 @@ function crearCursoAcademico(){
 				
 				if(respuesta.estado == true){
 					//location.reload();
-					mostrarElemento("ok-crearCursoAcademico");
+					mostrarElementoById("ok-crearCursoAcademico");
 					//mensajeOk.innerHTML=respuesta.mensaje;
 					desactivarBoton("btn-crear-ca", 3000);
 					//window.location.href = "/";
@@ -42,12 +42,12 @@ function crearCursoAcademico(){
 					    clearInterval(downloadTimer);
 					    window.location.href = "/";
 					  } else {
-						  mensajeOk.innerHTML = respuesta.mensaje + ". Redirigiendo en " + timeleft + " segundos";
+						  mensajeOk.innerHTML = respuesta.mensaje + ".<br>Redirigiendo en " + timeleft + " segundos";
 					  }
 					  timeleft -= 1;
 					}, 1000);
 				} else {
-					mostrarElemento("err-crearCursoAcademico");
+					mostrarElementoById("err-crearCursoAcademico");
 					mensajeErr.innerHTML=respuesta.mensaje;
 					desactivarBoton("btn-crear-ca", 3000);
 				}
@@ -57,7 +57,7 @@ function crearCursoAcademico(){
 }
 
 function duplicarCursoAcademicoAnterior(elemento){
-	toggleOcultarElemento("divCursosAcademicosAnteriores");
+	toggleElemento("divCursosAcademicosAnteriores");
 	if(elemento.checked){
 		var x = new XMLHttpRequest();
 

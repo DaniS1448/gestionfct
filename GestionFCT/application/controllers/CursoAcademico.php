@@ -10,7 +10,7 @@ class CursoAcademico extends CI_Controller
     public function c(){
         verificarRol("admin");
         $data['scripts']=['cursoacademico'];
-        frame($this, "cursoAcademico/c");
+        frame($this, "cursoAcademico/c",$data);
     }
     
     public function ajaxCPost(){

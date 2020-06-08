@@ -48,7 +48,7 @@ function desactivarBoton($id, $milisegundos){
 	}, $milisegundos);
 }
 
-function toggleOcultarElemento(idElemento) {
+function toggleElemento(idElemento) {
 	  var x = document.getElementById(idElemento);
 	  if (x.style.display === "none") {
 	    x.style.display = "block";
@@ -57,28 +57,39 @@ function toggleOcultarElemento(idElemento) {
 	  }
 }
 
-function ocultarElemento(idElemento){
+function ocultarElementoById(idElemento){
 	var x = document.getElementById(idElemento);
 	if(x.style.display === "block"){
 		x.style.display = "none";
 	}
 }
 
-function ocultarElementos(arrayIdsElementos){
-	for(id of arrayIdsElementos){
-		ocultarElemento(id);
+function ocultarElemento(x){
+	if(x.style.display === "block"){
+		x.style.display = "none";
 	}
 }
 
-function mostrarElemento(idElemento){
+function ocultarElementosById(arrayIdsElementos){
+	for(id of arrayIdsElementos){
+		ocultarElementoById(id);
+	}
+}
+
+function mostrarElementoById(idElemento){
 	var x = document.getElementById(idElemento);
 	if(x.style.display === "none"){
 		x.style.display = "block";
 	}
 }
+function mostrarElemento(x){
+	if(x.style.display === "none"){
+		x.style.display = "block";
+	}
+}
 
-function mostrarElementos(arrayIdsElementos){
+function mostrarElementosById(arrayIdsElementos){
 	for(id of arrayIdsElementos){
-		mostrarElemento(id);
+		mostrarElementoById(id);
 	}
 }

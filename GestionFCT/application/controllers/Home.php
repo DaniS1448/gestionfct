@@ -7,7 +7,15 @@ class Home extends CI_Controller
     {
         $data['modals']=['modalLogin'];
         $data['scripts']=['login'];
-        frame($this, 'home/index',$data);
+        
+        if(devolverRol()=="admin"){
+            frame($this, 'home/indexAdmin',$data);
+        } elseif (devolverRol() == "auth") {
+            //frame($this, 'home/indexAuth',$data);
+        } else {
+            frame($this, 'home/index',$data);
+        }
+        
     }
     
     public function test(){
