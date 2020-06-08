@@ -12,6 +12,12 @@ class CursoAcademico extends CI_Controller
         frame($this, "cursoAcademico/c");
     }
     
+    public function ajaxCPost(){
+        if(esAjax()){
+            
+        }
+    }
+    
     public function cPost(){
         verificarRol("admin");
         $anyoini = isset($_POST["anyoini"])?$_POST["anyoini"]:null;
@@ -44,18 +50,9 @@ class CursoAcademico extends CI_Controller
     }
     
     public function ajaxGetCursosAcademicos(){
-        $esAjax = isset(
-            $_SERVER['HTTP_X_REQUESTED_WITH'])?
-            strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' :
-            false;
-            if ($esAjax) {
-
-                echo json_encode($this->cursoAcademico_model->getCursosAcademicos());
-                
-            }
-            else {
-                echo "SOLO EJECUCIONES AJAX";
-            }
+        if(esAjax()){
+            echo json_encode($this->cursoAcademico_model->getCursosAcademicos());
+        }
     }
 
 }

@@ -25,28 +25,20 @@ class Usuario extends CI_Controller
     }
 
     public function ajaxLoginPost(){
-
-        $esAjax = isset(
-            $_SERVER['HTTP_X_REQUESTED_WITH'])?
-            strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' :
-            false;
-            if ($esAjax) {
-                $loginEmail = isset($_POST['loginEmail'])?$_POST['loginEmail']:null;
-                $loginPwd = isset($_POST['loginPwd'])?$_POST['loginPwd']:null;
-                
-                $respuesta = $this->usuario_model->verificarLogin($loginEmail,$loginPwd);
-                if($respuesta['estado']){
-                    $_SESSION['user']=$this->usuario_model->getUsuarioByEmail($loginEmail);
-                } else {
-                    unset($_SESSION['user']);
-                }
-
-                echo json_encode($respuesta);
-
+        if (esAjax()) {
+            $loginEmail = isset($_POST['loginEmail'])?$_POST['loginEmail']:null;
+            $loginPwd = isset($_POST['loginPwd'])?$_POST['loginPwd']:null;
+            
+            $respuesta = $this->usuario_model->verificarLogin($loginEmail,$loginPwd);
+            if($respuesta['estado']){
+                $_SESSION['user']=$this->usuario_model->getUsuarioByEmail($loginEmail);
+            } else {
+                unset($_SESSION['user']);
             }
-            else {
-                echo "SOLO EJECUCIONES AJAX";
-            }
+            
+            echo json_encode($respuesta);
+            
+        }
     }
 
     public function logout(){
@@ -59,10 +51,12 @@ class Usuario extends CI_Controller
         if($key !=  null && $key!= ""){
             session_start_seguro();
             if($this->usuario_model->verificarEmail($key)){
+                $_SESSION['_msg']['tipo']="success";
                 $_SESSION['_msg']['texto']="Su mail ha sido verificado!";
                 $_SESSION['_msg']['uri']='';
                 
             } else {
+                $_SESSION['_msg']['tipo']="danger";
                 $_SESSION['_msg']['texto']="Su mail no ha sido verificado!";
                 $_SESSION['_msg']['uri']='';
             }
@@ -73,6 +67,7 @@ class Usuario extends CI_Controller
     public function reenviarActivacion(){
         $email = isset($_GET['email'])?$_GET['email']:null;
         session_start_seguro();
+        $_SESSION['_msg']['tipo']="danger";
         $_SESSION['_msg']['texto']="Ha habido algún error al mandar el mail de verificación";
         $_SESSION['_msg']['uri']='';
         if($email != null && $this->usuario_model->comprobarMailNoVerificado($email)){
@@ -80,8 +75,10 @@ class Usuario extends CI_Controller
             $usuario = $this->usuario_model->getUsuarioByEmail($email);
             if($usuario != null){
                 if(mandarMailActivacion($this,$usuario)){
+                    $_SESSION['_msg']['tipo']="success";
                     $_SESSION['_msg']['texto']="El mail ha sido enviado, compruebe su bandeja de entrada o spam!";
                 } else {
+                    $_SESSION['_msg']['tipo']="danger";
                     $_SESSION['_msg']['texto']="El servidor mail ha fallado, no ha sido posible mandar su mail";
                 }
             }
@@ -90,32 +87,25 @@ class Usuario extends CI_Controller
     }
 
     public function ajaxRecuperarPwdPost(){
-        $esAjax = isset(
-            $_SERVER['HTTP_X_REQUESTED_WITH'])?
-            strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' :
-            false;
-            if ($esAjax) {
-                $email = isset($_POST['email'])?$_POST['email']:null;
-                $respuesta['estado']=false;
-                $respuesta['mensaje']="¡Comprueba que el mail sea correcto!";
-                if($email != null && $this->usuario_model->cambiarVerifKey($email)){
-                    $this->load->helper("mimail_helper");
-                    $usuario = $this->usuario_model->getUsuarioByEmail($email);
-                    if(mandarMailRecupPwd($this,$usuario)){
-                        $respuesta['estado']=true;
-                        $respuesta['mensaje']="Hemos enviado un mail con las instrucciones. ¡Compruebe su bandeja de entrada o spam!";
-                    } else {
-                        $respuesta['mensaje']="El servidor mail ha fallado, no ha sido posible mandar su mail";
-                    }
-                    
+        if (esAjax()) {
+            $email = isset($_POST['email'])?$_POST['email']:null;
+            $respuesta['estado']=false;
+            $respuesta['mensaje']="¡Comprueba que el mail sea correcto!";
+            if($email != null && $this->usuario_model->cambiarVerifKey($email)){
+                $this->load->helper("mimail_helper");
+                $usuario = $this->usuario_model->getUsuarioByEmail($email);
+                if(mandarMailRecupPwd($this,$usuario)){
+                    $respuesta['estado']=true;
+                    $respuesta['mensaje']="Hemos enviado un mail con las instrucciones. ¡Compruebe su bandeja de entrada o spam!";
+                } else {
+                    $respuesta['mensaje']="El servidor mail ha fallado, no ha sido posible mandar su mail";
                 }
-
-                echo json_encode($respuesta);
-
+                
             }
-            else {
-                echo "SOLO EJECUCIONES AJAX";
-            }
+            
+            echo json_encode($respuesta);
+            
+        }
     }
 
     public function recuperarPwd(){
@@ -126,6 +116,7 @@ class Usuario extends CI_Controller
             frame($this, 'usuario/recuperarPwd',$data);
         } else{
             session_start_seguro();
+            $_SESSION['_msg']['tipo']="danger";
             $_SESSION['_msg']['texto']="Hay un problema con la recuperación de contraseña";
             $_SESSION['_msg']['uri']='';
             redirect(base_url() . 'msg');
@@ -139,6 +130,7 @@ class Usuario extends CI_Controller
             $this->usuario_model->recuperarPwd($key,$newPwd);
         }
         session_start_seguro();
+        $_SESSION['_msg']['tipo']="success";
         $_SESSION['_msg']['texto']="La contraseña ha sido actualizada!";
         $_SESSION['_msg']['uri']='';
         redirect(base_url() . 'msg');  

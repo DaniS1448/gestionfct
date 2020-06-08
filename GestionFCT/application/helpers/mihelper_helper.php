@@ -66,4 +66,15 @@ function crearModalAviso($tipo="warning", $mensaje="No hay mensajes", $volver=""
     echo "<script>mostrarModalError('$tipo','$mensaje','$volver')</script>";
 }
 
+function esAjax(){
+    $esAjax = isset(
+        $_SERVER['HTTP_X_REQUESTED_WITH'])?
+        strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' :
+        false;
+        if (!$esAjax) {
+            echo "SOLO EJECUCIONES AJAX";
+        }
+    return $esAjax;
+}
+
 ?>
