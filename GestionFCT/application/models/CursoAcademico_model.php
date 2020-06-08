@@ -12,10 +12,18 @@ class CursoAcademico_model extends CI_Model
         return R::findAll('cursoacademico');
     }
     
-    function c($anyoini){
-        $ca = R::dispense("cursoacademico");
-        $ca->anyoini = $anyoini;
-        R::store($ca);
+    function c($anyoini){       
+        $ca = R::findOne('cursoacademico','anyoini=?',[$anyoini]);
+        $ok = ($ca==null && $anyoini!=null);
+        if ($ok) {
+            $ca = R::dispense('pais');
+            $ca->anyoini = $anyoini;
+            R::store($ca);
+        }
+        else {
+            $e = ($anyoini==null?new Exception("nulo"):new Exception("Curso académico duplicado"));
+            throw $e;
+        }
     }
 }
 

@@ -16,12 +16,29 @@ class CursoAcademico extends CI_Controller
         verificarRol("admin");
         $anyoini = isset($_POST["anyoini"])?$_POST["anyoini"]:null;
         $idCursoAnterior = isset($_POST["idCursoAnterior"])?$_POST["idCursoAnterior"]:null;
-        if($idCursoAnterior==null && $anyoini!=null){
-            $this->cursoAcademico_model->c($anyoini);
-            //crearModalAviso("success", "Curso académico creado correctamente","/");
-            
-        } else if($idCursoAnterior!=null && $anyoini!=null) {
-            
+        
+        if($anyoini==null){
+            session_start_seguro();
+            $_SESSION['_msg']['tipo']="danger";
+            $_SESSION['_msg']['texto']="El año de cominezo no puede estar vacío";
+            $_SESSION['_msg']['uri']='cursoAcademico/c';
+            redirect(base_url() . 'msg');
+        } else {
+            if($idCursoAnterior==null){
+                try {
+                    $this->cursoAcademico_model->c($anyoini);
+                    redirect(base_url() . '/');
+                }
+                catch (Exception $e) {
+                    session_start_seguro();
+                    $_SESSION['_msg']['tipo']="danger";
+                    $_SESSION['_msg']['texto']=$e->getMessage();
+                    $_SESSION['_msg']['uri']='cursoAcademico/c';
+                    redirect(base_url() . 'msg');
+                }
+            } else {
+                
+            }
         }
         
     }

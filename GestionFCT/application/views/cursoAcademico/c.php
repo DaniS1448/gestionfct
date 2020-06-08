@@ -14,7 +14,7 @@
                         
                   </select>
                </div>
-               <button class="btn btn-outline-primary mt-3" type="submit">Siguiente</button>
+               <button class="btn btn-outline-primary mt-3" type="submit">Crear</button>
             </form>
          </div>
       </div>
