@@ -55,4 +55,15 @@ function getAnyoIni()
     return date('m') < 7 ? date('Y') - 1 : date('Y');
 }
 
+function crearModalAviso($tipo="warning", $mensaje="No hay mensajes", $volver=""){
+    echo "<script src=\"".base_url()."assets/js/principal.js\"></script>\n";
+    $titulo = "";
+    $modals=['modalErrores'];
+    $scripts=['principal'];
+    require_once APPPATH.'views\_templates\01-head.php';
+    require_once APPPATH.'views\_templates\04-modal.php';
+    require_once APPPATH.'views\_templates\06-end.php';
+    echo "<script>mostrarModalError('$tipo','$mensaje','$volver')</script>";
+}
+
 ?>

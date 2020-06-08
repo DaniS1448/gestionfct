@@ -47,3 +47,12 @@ function desactivarBoton($id, $milisegundos){
 		document.getElementById($id).disabled = false;
 	}, $milisegundos);
 }
+
+function toggleOcultarElemento(idElemento) {
+	  var x = document.getElementById(idElemento);
+	  if (x.style.display === "none") {
+	    x.style.display = "block";
+	  } else {
+	    x.style.display = "none";
+	  }
+}

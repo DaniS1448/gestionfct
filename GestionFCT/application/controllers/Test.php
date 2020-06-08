@@ -18,5 +18,10 @@ class Test extends CI_Controller {
     public function devolverRol(){
         echo devolverRol();
     }
+    
+    public function iniCursoAcademico(){
+        $this->load->model("CursoAcademico_model");
+        $this->CursoAcademico_model->ini();
+    }
 }
 ?>
