@@ -19,7 +19,7 @@
          </li>
       </ul>
       <ul class="nav navbar-nav ml-auto nav-flex-icons">
-      	<li class="nav-item" role="presentation"><a class="nav-link active" href="<?= base_url(); ?>">Home</a></li>
+      	<li class="nav-item" role="presentation"><a class="nav-link active" href="<?= base_url(); ?>cursoAcademico/c">Crear CA</a></li>
       	
          
          <?php if(isset($_SESSION['user'])):?>
