@@ -68,6 +68,8 @@ QUINTA REUNIÓN (9 de junio de 2020)
 -----------------
 - [ ] Nombre grupo no pueda ser duplicado en el mismo curso acadçemico
 - [ ] Grupo duplicar solo los usuarios(profesores) sin alumnos
+- [ ] Método transporte para calcular la distancia en coche/transporte público
+- [ ] Google API guardado en la BBDD
 
 CUARTA REUNIÓN (2 de junio de 2020)
 -----------------
