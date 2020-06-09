@@ -16,24 +16,27 @@ class Instituto extends CI_Controller
     public function ajaxCPost(){
         if(esAjax()){
             $nombre = isset($_POST["nombre"])?$_POST["nombre"]:null;
+            $idMunicipio = isset($_POST["idMunicipio"])?$_POST["idMunicipio"]:null;
             $n_centro = isset($_POST["n_centro"])?$_POST["n_centro"]:null;
             
             $respuesta['estado']=false;
             $respuesta['mensaje']="";
             
             if($nombre==null){
-                $respuesta['estado']=false;
                 $respuesta['mensaje']="El nombre del instituto no puede estar vacío";
             } else {
                 if($n_centro==null){
-                    try {
-                        $this->instituto_model->c($nombre);
-                        $respuesta['estado']=true;
-                        $respuesta['mensaje']="Instituto $nombre creado correctamente";
-                    }
-                    catch (Exception $e) {
-                        $respuesta['estado']=false;
-                        $respuesta['mensaje']=$e->getMessage();
+                    if($idMunicipio!=null){
+                        try {
+                            $this->instituto_model->c($nombre,$idMunicipio);
+                            $respuesta['estado']=true;
+                            $respuesta['mensaje']="Instituto $nombre creado correctamente";
+                        }
+                        catch (Exception $e) {
+                            $respuesta['mensaje']=$e->getMessage();
+                        }
+                    } else {
+                        $respuesta['mensaje']="El campo municipio no puede estar vacío";
                     }
                 } else {
                     //TODO crear instituto con más datos
@@ -50,6 +53,24 @@ class Instituto extends CI_Controller
         }
     }
     
+    public function ajaxGetInstitutosLike(){
+        if(esAjax()){
+            $nombre = isset($_POST["nombre"])?$_POST["nombre"]:"";
+            //echo json_encode($this->instituto_model->getInstitutosLike($nombre));
+            $arrInstitutos=[];
+            
+            foreach ($this->instituto_model->getInstitutosLike($nombre) as $instituto){
+                $atributos=[];
+                foreach ($instituto as $k=>$v){
+                    $atributos[$k]=$v;
+                }
+                $atributos["municipio"]=$instituto->municipio->nombre;
+                $arrInstitutos[]=$atributos;
+            }
+            echo json_encode($arrInstitutos);
+        }
+    }
+
 }
 ?>
 

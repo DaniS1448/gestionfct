@@ -48,7 +48,7 @@ function desactivarBoton($id, $milisegundos){
 	}, $milisegundos);
 }
 
-function toggleElemento(idElemento) {
+function toggleElementoById(idElemento) {
 	  var x = document.getElementById(idElemento);
 	  if (x.style.display === "none") {
 	    x.style.display = "block";
@@ -56,6 +56,15 @@ function toggleElemento(idElemento) {
 	    x.style.display = "none";
 	  }
 }
+
+function toggleElemento(x) {
+	  if (x.style.display === "none") {
+	    x.style.display = "block";
+	  } else {
+	    x.style.display = "none";
+	  }
+}
+
 
 function ocultarElementoById(idElemento){
 	var x = document.getElementById(idElemento);

@@ -14,12 +14,15 @@ class Grupo_model extends CI_Model
             $titulacion = R::load('titulacion', $idTitulacion);
             $curso = R::findOne('cursoacademico','anyoini=?',[$anyoini]);
             $instituto = R::load('instituto', $idInstituto);
-            $grupo = R::dispense('grupo');
-            $grupo->nombre = $nombre;
-            $grupo->titulacion = $titulacion;
-            $grupo->cursoacademico = $curso;
-            $grupo->instituto = $instituto;
-            R::store($grupo);
+            if($titulacion!=null && $curso!=null && $instituto!=null){
+                $grupo = R::dispense('grupo');
+                $grupo->nombre = $nombre;
+                $grupo->titulacion = $titulacion;
+                $grupo->cursoacademico = $curso;
+                $grupo->instituto = $instituto;
+                R::store($grupo);
+            }
+            
         }
         else {
             $e = ($nombre==null?new Exception("nulo"):new Exception("Grupo duplicado"));

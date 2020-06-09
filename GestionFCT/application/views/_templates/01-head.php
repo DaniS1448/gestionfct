@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="<?=base_url()?>/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/misclases.css">
     <script src="<?=base_url()?>assets/js/jquery.js"></script>
     <script src="<?=base_url()?>assets/js/popper.js"></script>
     <script src="<?=base_url()?>assets/js/bootstrap.js"></script>

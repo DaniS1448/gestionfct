@@ -26,13 +26,17 @@ class Grupo extends CI_Controller
                 $respuesta['mensaje']="El nombre del grupo no puede estar vacío";
             } else {
                 if($idTitulacion!=null){
-                    try {
-                        $this->grupo_model->c($nombre,$idTitulacion,$idInstituto,getAnyoIni());
-                        $respuesta['estado']=true;
-                        $respuesta['mensaje']="Grupo $nombre creado correctamente";
-                    }
-                    catch (Exception $e) {
-                        $respuesta['mensaje']=$e->getMessage();
+                    if($idInstituto!=null){
+                        try {
+                            $this->grupo_model->c($nombre,$idTitulacion,$idInstituto,getAnyoIni());
+                            $respuesta['estado']=true;
+                            $respuesta['mensaje']="Grupo $nombre creado correctamente";
+                        }
+                        catch (Exception $e) {
+                            $respuesta['mensaje']=$e->getMessage();
+                        }
+                    } else {
+                        $respuesta['mensaje']="El campo instituto no puede estar vacío";
                     }
                 } else {
                     $respuesta['mensaje']="La titulación no puede estar vacía";

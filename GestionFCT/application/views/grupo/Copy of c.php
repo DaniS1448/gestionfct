@@ -8,23 +8,20 @@
                <span class="text-danger" id="err-nombreGrupo" style="display:none"></span>
                
                <div class="form-group mt-4">
-               		<label for="selectFamiliaProfesional">Familia profesional</label>
+               		<label for="formCheckDuplicarCurso">Familia profesional</label>
                		<select class="form-control" id="selectFamiliaProfesional" name="idFamiliaProfesional" 
                		onclick="cargarGrupoCadaDato('/titulacion/ajaxGetTitulacionesByFamiliaProfesional','selectTitulacion','nombre','idFamiliaProfesional='+this.value);"></select>
                </div>
                
                <div class="form-group mt-4">
-               		<label for="selectTitulacion">Titulación</label>
+               		<label for="formCheckDuplicarCurso">Titulación</label>
                		<select class="form-control" id="selectTitulacion" name="idTitulacion"></select>
                		<span class="text-danger" id="err-titulacionGrupo" style="display:none"></span>
                </div>
 
                <div class="form-group mt-4">
-               		<label for="nombreBuscarInstituto">Instituto</label>
-               		<input type="hidden" class="form-control" name="nombre" id="idInstituto" />
-               		<input type="text" class="form-control" id="nombreBuscarInstituto" placeholder="Nombre instituto" onfocus="mostrarElementoById('busquedaInstituto')" onblur="onBlurMiInput();" onkeyup="cargarLiInstitutos(this);" onclick="cargarLiInstitutos(this);"/>
-               		<ul id="busquedaInstituto" class="busquedaInstituto" style="display:none"></ul>
-               		<span class="text-danger" id="err-institutoGrupo" style="display:none"></span>
+               		<label for="formCheckDuplicarCurso">Instituto (filtrar cuando hayan muchos)</label>
+               		<select class="form-control" id="selectInstituto" name="idInstituto"></select>
                </div>
                
                <span class="text-success mt-2" id="ok-nombreGrupo" style="display:none"></span>
@@ -35,6 +32,3 @@
    </section>
    <script>cargarGrupoDatos();</script>
 </main>
-<script>
-
-</script>

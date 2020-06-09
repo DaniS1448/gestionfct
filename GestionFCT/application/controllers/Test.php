@@ -90,5 +90,47 @@ class Test extends CI_Controller {
             echo "No se ha podido crear la cuenta, ya existe!";
         }
     }
+    
+    public function iniPais(){
+        $this->load->model('Pais_model');
+        foreach (['España'] as $nombre){
+            $this->Pais_model->c($nombre);
+        }
+    }
+    
+    public function iniCCAA(){
+        $this->load->model('ComunidadAutonoma_model');
+        foreach ([
+            ['Comunidad de Madrid',"1"]
+        ] as $ccaa){
+            $this->ComunidadAutonoma_model->c($ccaa[0],$ccaa[1]);
+        }
+    }
+    
+    public function iniProvincia(){
+        $this->load->model('Provincia_model');
+        foreach ([
+            ['Madrid',"1"]
+        ] as $provincia){
+            $this->Provincia_model->c($provincia[0],$provincia[1]);
+        }
+    }
+    
+    public function iniMunicipio(){
+        $this->load->model('Municipio_model');
+        foreach ([
+            ['San Fernando de Henares',"1"]
+        ] as $municipio){
+            $this->Municipio_model->c($municipio[0],$municipio[1]);
+        }
+    }
+    
+    public function iniInstiMuni(){
+        $municipio = R::load('municipio', "1");
+        $instituto = R::dispense('instituto');
+        $instituto->nombre = "Test Insti con Municipio";
+        $instituto->municipio = $municipio;
+        R::store($instituto);
+    }
 }
 ?>

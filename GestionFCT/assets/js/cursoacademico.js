@@ -57,7 +57,7 @@ function crearCursoAcademico(){
 }
 
 function duplicarCursoAcademicoAnterior(elemento){
-	toggleElemento("divCursosAcademicosAnteriores");
+	toggleElementoById("divCursosAcademicosAnteriores");
 	if(elemento.checked){
 		var x = new XMLHttpRequest();
 
