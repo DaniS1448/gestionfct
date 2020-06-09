@@ -11,7 +11,7 @@ class Home extends CI_Controller
         if(devolverRol()=="admin"){
             frame($this, 'home/indexAdmin',$data);
         } elseif (devolverRol() == "auth") {
-            //frame($this, 'home/indexAuth',$data);
+            frame($this, 'home/index',$data);
         } else {
             frame($this, 'home/index',$data);
         }

@@ -7,23 +7,6 @@ class Usuario extends CI_Controller
         $this->load->model('usuario_model');
     }
 
-    public function ini(){
-        //$this->load->model('usuario_model');
-        if($this->usuario_model->existeAdmin()){
-            $id = $this->usuario_model->crearUsuario("admin","stuparudani@gmail.com","admin",true);
-            if($id > 0){
-                $usuario = $this->usuario_model->getUsuarioById($id);
-                $this->load->helper("mimail_helper");
-                mandarMailActivacion($this,$usuario);
-                echo "El administrador se ha creado correctamente";
-            } else {
-                echo "Error al crear el admin";
-            }
-        } else {
-            echo "No se ha podido crear la cuenta admin, ya existe!";
-        }
-    }
-
     public function ajaxLoginPost(){
         if (esAjax()) {
             $loginEmail = isset($_POST['loginEmail'])?$_POST['loginEmail']:null;

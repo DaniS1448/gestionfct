@@ -3,7 +3,7 @@ class Test extends CI_Controller {
     
     public function __construct(){
         parent::__construct();
-        verificarLogin();
+        //verificarLogin();
     }
     
     public function index() {
@@ -55,6 +55,40 @@ class Test extends CI_Controller {
 //             $this->Titulacion_model->c($titulacion[0],$titulacion[1],$titulacion[2]);
 //         }
         
+    }
+    
+    public function iniAdmin(){
+        $this->load->model('usuario_model');
+        if($this->usuario_model->existeAdmin()){
+            $id = $this->usuario_model->crearUsuario("admin","stuparudani@gmail.com","admin",true);
+            if($id > 0){
+                $usuario = $this->usuario_model->getUsuarioById($id);
+                $this->load->helper("mimail_helper");
+                mandarMailActivacion($this,$usuario);
+                echo "El administrador se ha creado correctamente";
+            } else {
+                echo "Error al crear el admin";
+            }
+        } else {
+            echo "No se ha podido crear la cuenta admin, ya existe!";
+        }
+    }
+    
+    public function iniAuth(){
+        $this->load->model('usuario_model');
+        if(true){
+            $id = $this->usuario_model->crearUsuario("Daniel Stuparu","razvan.stuparu@educa.madrid.org","Daniel123",false);
+            if($id > 0){
+                $usuario = $this->usuario_model->getUsuarioById($id);
+                $this->load->helper("mimail_helper");
+                mandarMailActivacion($this,$usuario);
+                echo "La cuenta se ha creado correctamente";
+            } else {
+                echo "Error al crear el la cuenta";
+            }
+        } else {
+            echo "No se ha podido crear la cuenta, ya existe!";
+        }
     }
 }
 ?>
