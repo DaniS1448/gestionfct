@@ -18,6 +18,11 @@ class Instituto extends CI_Controller
             $nombre = isset($_POST["nombre"])?$_POST["nombre"]:null;
             $idMunicipio = isset($_POST["idMunicipio"])?$_POST["idMunicipio"]:null;
             $n_centro = isset($_POST["n_centro"])?$_POST["n_centro"]:null;
+            $direccion = isset($_POST["direccion"])?$_POST["direccion"]:null;
+            $cif = isset($_POST["cif"])?$_POST["cif"]:null;
+            $telefono = isset($_POST["telefono"])?$_POST["telefono"]:null;
+            $email = isset($_POST["email"])?$_POST["email"]:null;
+            
             
             $respuesta['estado']=false;
             $respuesta['mensaje']="";
@@ -25,21 +30,17 @@ class Instituto extends CI_Controller
             if($nombre==null){
                 $respuesta['mensaje']="El nombre del instituto no puede estar vacío";
             } else {
-                if($n_centro==null){
-                    if($idMunicipio!=null){
-                        try {
-                            $this->instituto_model->c($nombre,$idMunicipio);
-                            $respuesta['estado']=true;
-                            $respuesta['mensaje']="Instituto $nombre creado correctamente";
-                        }
-                        catch (Exception $e) {
-                            $respuesta['mensaje']=$e->getMessage();
-                        }
-                    } else {
-                        $respuesta['mensaje']="El campo municipio no puede estar vacío";
+                if($idMunicipio!=null){
+                    try {
+                        $this->instituto_model->c($nombre,$idMunicipio,$n_centro,$direccion,$cif,$telefono,$email);
+                        $respuesta['estado']=true;
+                        $respuesta['mensaje']="Instituto $nombre creado correctamente";
+                    }
+                    catch (Exception $e) {
+                        $respuesta['mensaje']=$e->getMessage();
                     }
                 } else {
-                    //TODO crear instituto con más datos
+                    $respuesta['mensaje']="El campo municipio no puede estar vacío";
                 }
             }
             
