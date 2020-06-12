@@ -21,6 +21,58 @@ class Usuario_model extends CI_Model
         $usuario->verification_key = md5(rand());
         return R::store($usuario);
     }
+    
+    function c($nombre,$email,$pwd,$esAdmin,$idsGrupo){
+        $usuario = R::dispense('usuario');
+        $usuario->nombre = $nombre;
+        $usuario->email = $email;
+        $usuario->pwd = password_hash($pwd, PASSWORD_DEFAULT);
+        $usuario->esAdmin = $esAdmin;
+        $usuario->email_verificado = false;
+        $usuario->verification_key = md5(rand());
+        $resultado = R::store($usuario);
+        
+        foreach ($idsGrupo as $idGrupo) {
+            $grupo = R::load('grupo', $idGrupo);
+            $imparte = R::dispense('imparte');
+            $imparte->usuario = $usuario;
+            $imparte->grupo = $grupo;
+            R::store($imparte);
+        }
+        
+        return $resultado;
+    }
+    
+    function u($nombre,$email,$pwd,$esAdmin,$idsGrupo){
+        $usuario = R::dispense('usuario');
+        $usuario->nombre = $nombre;
+        $usuario->email = $email;
+        $usuario->pwd = password_hash($pwd, PASSWORD_DEFAULT);
+        $usuario->esAdmin = $esAdmin;
+        $usuario->email_verificado = false;
+        $usuario->verification_key = md5(rand());
+        
+        
+        $comunes = [];
+        foreach ($usuario->ownImparteList as $imparte) {
+            if (! in_array($imparte->grupo_id, $idsGrupo)) {
+                R::store($usuario);
+                R::trash($imparte);
+            } else {
+                $comunes[] = $imparte->grupo_id;
+            }
+        }
+        
+        foreach (array_diff($idsGrupo, $comunes) as $idGrupo) {
+            $aficion = R::load('aficion', $idGrupo);
+            $imparte = R::dispense('gusta');
+            $imparte->persona = $usuario;
+            $imparte->aficion = $aficion;
+            R::store($usuario);
+            R::store($imparte);
+        }
+        
+    }
 
     function verificarLogin($loginEmail,$loginPwd){
         $usuario = R::findOne('usuario','email=?',[$loginEmail]);

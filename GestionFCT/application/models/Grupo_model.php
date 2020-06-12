@@ -29,6 +29,10 @@ class Grupo_model extends CI_Model
             throw $e;
         }
     }
+    
+    function getGruposByInstitutoId($idInstituto){
+        return R::find('grupo',' instituto_id LIKE :instituto_id ',[':instituto_id' => '%' . $idInstituto . '%']);
+    }
 }
 
 ?>

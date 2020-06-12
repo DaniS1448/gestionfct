@@ -7,6 +7,7 @@
                 <a class="btn btn-outline-primary" role="button" href="/cursoacademico/c">Crear Curso Academico</a>
                 <a class="btn btn-outline-primary" role="button" href="/instituto/c">Crear Instituto</a>
                 <a class="btn btn-outline-primary" role="button" href="/grupo/c">Crear Grupo</a>
+                <a class="btn btn-outline-primary" role="button" href="/usuario/c">Crear Usuario</a>
             </div>
         </section>
 </main>

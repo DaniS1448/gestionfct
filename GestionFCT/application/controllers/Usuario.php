@@ -118,6 +118,57 @@ class Usuario extends CI_Controller
         $_SESSION['_msg']['uri']='';
         redirect(base_url() . 'msg');  
     }
+    
+    public function c(){
+        verificarRol("admin");
+        $data['scripts']=['usuario'];
+        frame($this, "usuario/c",$data);
+    }
+    
+    public function ajaxCPost(){
+        if(esAjax()){
+            $email = isset($_POST['email'])?$_POST['email']:null;
+            $pwd = isset($_POST['pwd'])?$_POST['pwd']:null;
+            $nombre = isset($_POST['nombre'])?$_POST['nombre']:null;
+            $idsGrupo = isset($_POST['idsGrupo'])?$_POST['idsGrupo']:null;
+            
+            $respuesta['estado']=false;
+            $respuesta['mensaje']="";
+            
+            if($email!=null && $pwd!=null && $nombre!=null){
+                if($idsGrupo==null){
+                    try {
+                        $this->usuario_model->c($nombre,$email,$pwd,true,[]);
+                        $respuesta['estado']=true;
+                        $respuesta['mensaje']="Usuario $nombre creado correctamente";
+                    }
+                    catch (Exception $e) {
+                        $respuesta['mensaje']=$e->getMessage();
+                    }
+                    $this->usuario_model->c($nombre,$email,$pwd,true,[]);
+                } else {
+                    try {
+                        $this->usuario_model->c($nombre,$email,$pwd,false,$idsGrupo);
+                        $respuesta['estado']=true;
+                        $respuesta['mensaje']="Usuario $nombre creado correctamente";
+                    }
+                    catch (Exception $e) {
+                        $respuesta['mensaje']=$e->getMessage();
+                    }
+                }
+            } else {
+                $respuesta['mensaje']="Comprueba que has mandado el email, la contraseña y el nombre";
+            }
+            
+            echo json_encode($respuesta);
+        }
+    }
+    
+    public function ajaxCPostTest(){
+        $idsGrupo = isset($_POST['idsGrupo'])?$_POST['idsGrupo']:null;
+        
+        echo var_dump($idsGrupo);
+    }
 
 }
 ?>

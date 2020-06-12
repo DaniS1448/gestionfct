@@ -102,3 +102,15 @@ function mostrarElementosById(arrayIdsElementos){
 		mostrarElementoById(id);
 	}
 }
+
+function mostrarElementos(elementos){
+	for(elemento of elementos){
+		mostrarElemento(elemento);
+	}
+}
+
+function ocultarElementos(elementos){
+	for(elemento of elementos){
+		ocultarElemento(elemento);
+	}
+}
