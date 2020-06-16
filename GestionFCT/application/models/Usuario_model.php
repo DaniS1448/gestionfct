@@ -23,22 +23,30 @@ class Usuario_model extends CI_Model
     }
     
     function c($nombre,$email,$pwd,$esAdmin,$idsGrupo){
-        $usuario = R::dispense('usuario');
-        $usuario->nombre = $nombre;
-        $usuario->email = $email;
-        $usuario->pwd = password_hash($pwd, PASSWORD_DEFAULT);
-        $usuario->esAdmin = $esAdmin;
-        $usuario->email_verificado = false;
-        $usuario->verification_key = md5(rand());
-        $resultado = R::store($usuario);
-        
-        foreach ($idsGrupo as $idGrupo) {
-            $grupo = R::load('grupo', $idGrupo);
-            $imparte = R::dispense('imparte');
-            $imparte->usuario = $usuario;
-            $imparte->grupo = $grupo;
-            R::store($imparte);
+        $usuario = R::findOne('usuario','email=?',[$email]);
+        $ok = ($usuario==null && $nombre!=null);
+        if ($ok) {
+            $usuario = R::dispense('usuario');
+            $usuario->nombre = $nombre;
+            $usuario->email = $email;
+            $usuario->pwd = password_hash($pwd, PASSWORD_DEFAULT);
+            $usuario->esAdmin = $esAdmin;
+            $usuario->email_verificado = false;
+            $usuario->verification_key = md5(rand());
+            $resultado = R::store($usuario);
+            
+            foreach ($idsGrupo as $idGrupo) {
+                $grupo = R::load('grupo', $idGrupo);
+                $imparte = R::dispense('imparte');
+                $imparte->usuario = $usuario;
+                $imparte->grupo = $grupo;
+                R::store($imparte);
+            }
+        } else {
+            $e = ($nombre==null?new Exception("nulo"):new Exception("Email duplicado"));
+            throw $e;
         }
+        
         
         return $resultado;
     }

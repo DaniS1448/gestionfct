@@ -7,8 +7,13 @@ class Grupo_model extends CI_Model
         return R::findAll('grupo');
     }
     
-    function c($nombre,$idTitulacion,$idInstituto,$anyoini){       
-        $ca = R::findOne('grupo','nombre=?',[$nombre]);
+    function c($nombre,$idTitulacion,$idInstituto,$anyoini){    
+        $curso = R::findOne('cursoacademico','anyoini=?',[$anyoini]);
+//         if($curso == null){
+//             $curso = R::dispense("cursoacademico");
+//             $curso->id= "0";
+//         }
+        $ca = R::findOne('grupo','nombre=? AND cursoacademico_id=? AND instituto_id=?',[$nombre,$curso->id,$idInstituto]);
         $ok = ($ca==null && $nombre!=null);
         if ($ok) {
             $titulacion = R::load('titulacion', $idTitulacion);
@@ -30,8 +35,11 @@ class Grupo_model extends CI_Model
         }
     }
     
-    function getGruposByInstitutoId($idInstituto){
-        return R::find('grupo',' instituto_id LIKE :instituto_id ',[':instituto_id' => '%' . $idInstituto . '%']);
+    function getGruposByInstitutoId($idInstituto,$anyoini){
+        //return R::find('grupo',' instituto_id LIKE :instituto_id ',[':instituto_id' => '%' . $idInstituto . '%']);
+        //return R::find('grupo',' instituto_id=:instituto_id ',[':instituto_id'=>$idInstituto]);
+        $cursoActual = R::findOne('cursoacademico','anyoini=?',[$anyoini]);
+        return R::find('grupo',' instituto_id=? AND cursoacademico_id=?',[$idInstituto,$cursoActual->id]);
     }
 }
 

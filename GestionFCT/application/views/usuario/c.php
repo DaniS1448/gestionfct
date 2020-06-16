@@ -31,7 +31,7 @@
                    </div>
                </div>
                <span class="text-success mt-2" id="okCrearUsuario" style="display:none"></span>
-               <button class="btn btn-outline-primary mt-3" type="button" id="btn-crear-ca" onclick="crearUsuario();">Crear</button>
+               <button class="btn btn-outline-primary mt-3" type="button" id="btn-crear-usuario" onclick="crearUsuario();">Crear</button>
             </form>
          </div>
       </div>
@@ -122,9 +122,9 @@ function crearUsuario(){
 					}, 1000);
 				} else {
 					mostrarElemento(errCrearUsuarioEmail);
-					mensajeErr.innerHTML=respuesta.mensaje;
+					errCrearUsuarioEmail.innerHTML=respuesta.mensaje;
 				}
-				desactivarBoton("btn-crear-grupo", 3000);
+				desactivarBoton("btn-crear-usuario", 3000);
 			}
 		}
 	}

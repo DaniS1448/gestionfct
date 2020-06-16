@@ -37,6 +37,15 @@ class CursoAcademico extends CI_Controller
                     }
                 } else {
                     //TODO crear curso duplicando anterior
+                    try {
+                        $this->cursoAcademico_model->cAnterior($anyoini,$idCursoAnterior);
+                        $respuesta['estado']=true;
+                        $respuesta['mensaje']="Curso académico $anyoini creado correctamente";
+                    }
+                    catch (Exception $e) {
+                        $respuesta['estado']=false;
+                        $respuesta['mensaje']=$e->getMessage();
+                    }
                 }
             }
             

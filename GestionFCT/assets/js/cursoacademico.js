@@ -12,7 +12,7 @@ function crearCursoAcademico(){
 		ocultarElementosById(["err-crearCursoAcademico","ok-crearCursoAcademico"]);
 		var datos="anyoini="+anyoini;
 		if(document.getElementById("formCheckDuplicarCurso").checked && selectCursosAcademicosAnteriores!=""){
-			datos+="&selectCursosAcademicosAnteriores="+selectCursosAcademicosAnteriores;
+			datos+="&idCursoAnterior="+selectCursosAcademicosAnteriores;
 		}
 
 		var x = new XMLHttpRequest();

@@ -145,7 +145,6 @@ class Usuario extends CI_Controller
                     catch (Exception $e) {
                         $respuesta['mensaje']=$e->getMessage();
                     }
-                    $this->usuario_model->c($nombre,$email,$pwd,true,[]);
                 } else {
                     try {
                         $this->usuario_model->c($nombre,$email,$pwd,false,$idsGrupo);

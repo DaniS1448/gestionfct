@@ -52,7 +52,7 @@ class Grupo extends CI_Controller
         if(esAjax()){
             $idInstituto = isset($_POST["idInstituto"])?$_POST["idInstituto"]:null;
             if($idInstituto!=null){
-                echo json_encode($this->grupo_model->getGruposByInstitutoId($idInstituto));
+                echo json_encode($this->grupo_model->getGruposByInstitutoId($idInstituto,getAnyoIni()));
             }
         }
     }

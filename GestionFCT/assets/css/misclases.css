@@ -14,3 +14,90 @@
 .busquedaInstituto li:hover{
 	background-color:#d1d1d1;
 }
+
+.mi-fila {
+  max-width: 650px;
+  padding: 20px;
+  margin: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+
+#introduccion-alumnos .grupo-alumno {
+  background-color: rgba(180,217,251,0.99);
+}
+
+#introduccion-alumnos .numero-alumno {
+  font-family: ABeeZee, sans-serif;
+  font-size: 20px;
+}
+
+.numero-alumno {
+  position: relative;
+}
+
+#introduccion-alumnos .icono-eliminar-alumno {
+  position: absolute;
+  right: 5px;
+}
+
+#asignacion-alumnos .foto-empresa {
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+
+#asignacion-alumnos .alumno-elemento {
+  background-color: rgba(244,244,244,0.71);
+  flex: 1 0 21%;
+}
+
+#asignacion-alumnos .alumno-elemento {
+  background-color: rgba(244,244,244,0.71);
+}
+
+#asignacion-alumnos .lista-alumnos .handle-pos-alumno-aisgnado {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+
+#asignacion-alumnos .lista-alumnos .handle-pos-alumno-no-aisgnado {
+  position: absolute;
+  top: -6px;
+  left: -8px;
+}
+
+#asignacion-alumnos .alumno-elemento:hover {
+  cursor: grab;
+}
+
+#asignacion-alumnos .alumno-elemento:active {
+  cursor: grabbing;
+}
+
+#asignacion-alumnos .lista-alumnos .handle-mover-alumno:hover {
+  cursor: grab;
+}
+
+#asignacion-alumnos .lista-alumnos .handle-mover-alumno:active {
+  cursor: grabbing;
+}
+
+#asignacion-alumnos .empresas-bloqueadas, #asignacion-alumnos .empresas-desbloqueadas {
+  overflow-y: scroll;
+  height: 153px;
+}
+
+#asignacion-alumnos .flecha-iz {
+  font-size: 69px;
+}
+
+#asignacion-alumnos .icono-asig-empresa {
+  position: absolute;
+  right: 0;
+  font-size: 30px;
+}
+
+#asignacion-alumnos .icono-eliminar-empresa {
+  position: absolute;
+  top: 10px;
+  right: 5%;
+}
