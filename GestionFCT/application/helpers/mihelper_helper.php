@@ -55,6 +55,11 @@ function getAnyoIni()
     return date('m') < 7 ? date('Y') - 1 : date('Y');
 }
 
+function getCursoActual()
+{
+    return R::findOne('cursoacademico','anyoini=?',[getAnyoIni()]);
+}
+
 function crearModalAviso($tipo="warning", $mensaje="No hay mensajes", $volver=""){
     echo "<script src=\"".base_url()."assets/js/principal.js\"></script>\n";
     $titulo = "";
@@ -75,6 +80,11 @@ function esAjax(){
             echo "SOLO EJECUCIONES AJAX";
         }
     return $esAjax;
+}
+
+function getApiMaps(){
+    $cuenta = R::findOne('dato','identificador=?',["apimaps"]);
+    return $cuenta->campo1;
 }
 
 ?>

@@ -4,8 +4,12 @@ class Alumno_model extends CI_Model
 {
     function c($idGrupo,$nombre,$apellido,$dni,$direccion,$latitud,$longitud){
         
-        $usuario = R::findOne('alumno','dni=?',[$dni]);
-        $ok = ($usuario==null && $dni!=null);
+        $usuario="usuario";
+        if($dni!=""){
+            $usuario = R::findOne('alumno','dni=?',[$dni]);
+        } 
+        $todosdatosok = ($dni!="" && $idGrupo!="" && $nombre!="" && $apellido!="" && $direccion!="" && $latitud!="" && $longitud!="");
+        $ok = ($usuario==null && $todosdatosok);
         if ($ok) {
             $alumno = R::dispense("alumno");
             $alumno->nombre = $nombre;
@@ -30,7 +34,7 @@ class Alumno_model extends CI_Model
             
 
         } else {
-            $e = ($nombre==null?new Exception("DNI nulo"):new Exception("Alumno duplicado"));
+            $e = (!$todosdatosok?new Exception("Faltan datos"):new Exception("Alumno duplicado"));
             throw $e;
         }
     }

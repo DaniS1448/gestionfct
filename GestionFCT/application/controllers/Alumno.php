@@ -8,7 +8,7 @@ class Alumno extends CI_Controller
     }
     
     public function c(){
-        $data['scripts']=['alumno','apiplaces'];
+        $data['scripts']=['alumno'];
         
         if(devolverRol()=="admin"){
             frame($this, "alumno/cAdmin",$data);

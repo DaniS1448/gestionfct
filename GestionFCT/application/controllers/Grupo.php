@@ -56,6 +56,27 @@ class Grupo extends CI_Controller
             }
         }
     }
+    
+    public function ajaxGetGruposByUsuarioId(){
+        if(esAjax()){
+            if($_SESSION['user']!=null){
+                //echo json_encode($this->grupo_model->getGruposByUsuarioId($idUsuario,getAnyoIni()));
+                $this->load->model('usuario_model');
+                $usuario = $this->usuario_model->getUsuarioById($_SESSION['user']->id);
+                $ca = getCursoActual();
+                $arrGrupos=[];
+                
+                foreach ($usuario->aggr ( 'ownImparteList', 'grupo' ) as $grupo){
+                    
+                    if($grupo->cursoacademico == $ca){
+                        $arrGrupos[]=$grupo;
+                    }
+                }
+                
+                echo json_encode($arrGrupos);
+            }
+        }
+    }
 }
 ?>
 

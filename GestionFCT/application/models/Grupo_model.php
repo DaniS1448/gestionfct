@@ -41,6 +41,7 @@ class Grupo_model extends CI_Model
         $cursoActual = R::findOne('cursoacademico','anyoini=?',[$anyoini]);
         return R::find('grupo',' instituto_id=? AND cursoacademico_id=?',[$idInstituto,$cursoActual->id]);
     }
+    
 }
 
 ?>

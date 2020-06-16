@@ -3,21 +3,12 @@
       <div class="container">
          <div class="about-me">
             <form>
-               <p>Crear alumnos</p>
-               <div class="form-group mt-4">
-                   	<label for="nombreBuscarInstituto">Instituto</label>
-                   	<input type="hidden" class="form-control" id="idInstituto" />
-                   	<input type="text" class="form-control" id="nombreBuscarInstituto" placeholder="Nombre instituto" onfocus="mostrarElementoById('busquedaInstituto')" onblur="onBlurMiInput();" onkeyup="cargarLiInstitutos(this);" onclick="cargarLiInstitutos(this);"/>
-                   	<span class="text-danger" id="errCrearUsuarioInstituto" style="display:none"></span>
-                   	<ul id="busquedaInstituto" class="busquedaInstituto" style="display:none"></ul>
-               	</div>
-               		
+               <p>Crear alumnos</p>               		
                	<div class="form-group mt-4">
                    	<label for="selectGrupo">Grupo</label>
                    	<select class="form-control" id="selectGrupo" name="idGrupo"></select>
                    	<span class="text-danger" id="errGrupo" style="display:none"></span>
                </div>
-               
                <p>Introduzca todos los datos de los alumnos</p>
                 <div id="grupo-alumnos">
                     <div class="border rounded grupo-alumno p-2 mb-3">
@@ -189,16 +180,6 @@ function autorellenar(campo){
 	});
 }
 
-
-function clickLiInstituto(elemento){
-	document.getElementById("idInstituto").value=elemento.getAttribute("data-id-instituto");
-	document.getElementById("nombreBuscarInstituto").value=elemento.getAttribute("data-nombre-instituto");
-	document.getElementById("busquedaInstituto").innerHTML="";
-	document.getElementById("nombreBuscarInstituto").disabled=true;
-
-	cargarGrupos("/grupo/ajaxGetGruposByInstitutoId","idInstituto="+elemento.getAttribute("data-id-instituto"));
-}
-
 function cargarGrupos(url,datos){
 	var x = new XMLHttpRequest();
 
@@ -223,50 +204,9 @@ function cargarGrupos(url,datos){
 	}
 }
 
-function cargarUl(url,idUl,campoText,datos){
-	var x = new XMLHttpRequest();
-
-	x.open("POST", url, true);
-	x.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	x.setRequestHeader("X-Requested-With","XMLHttpRequest");
-	x.send(datos);
-	
-	x.onreadystatechange=function(){
-		if(x.readyState == 4 && x.status==200){
-			var respuesta = JSON.parse(x.responseText);
-			var ul = document.getElementById(idUl);
-			ul.innerHTML = "";
-			for(opcion in respuesta){
-				var li = document.createElement("li");
-				var textoLi = respuesta[opcion][campoText];
-				var municipio = respuesta[opcion].municipio;
-				//console.log(respuesta[opcion]);
-				var span = document.createElement("span");
-				span.appendChild(document.createTextNode(" ("+municipio+")"));
-				span.setAttribute("style", "color:#999999");
-				
-				li.appendChild(document.createTextNode("\u00A0\u00A0\u00A0\u00A0"+textoLi));
-				li.appendChild(span);
-				li.setAttribute("onclick", "clickLiInstituto(this);");
-				li.setAttribute("data-id-instituto", respuesta[opcion].id);
-				li.setAttribute("data-nombre-instituto", textoLi);
-			    ul.appendChild(li);
-			}
-				
-		}
-	}
-}
-
-function cargarLiInstitutos(elemento){
-	cargarUl("/instituto/ajaxGetInstitutosLike","busquedaInstituto","nombre","nombre="+elemento.value);
-}
-
-function onBlurMiInput(){
-	setTimeout(function() {
-			ocultarElementoById('busquedaInstituto');
-		}, 100);
-}
 
 </script>
+
+<script>cargarGrupos("/grupo/ajaxGetGruposByUsuarioId");</script>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=<?= getApiMaps();?>"></script>
