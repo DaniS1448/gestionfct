@@ -1,12 +1,13 @@
 <?php
 
 function mandarMail($controlador,$message,$destinatario,$asunto){
+    $cuenta = R::findOne('dato','identificador=?',["cuentamail"]);
     $configMiMail['protocol']    = 'smtp';
     $configMiMail['smtp_host']    = 'ssl://smtp.gmail.com';
     $configMiMail['smtp_port']    = '465';
     $configMiMail['smtp_timeout'] = '7';
-    $configMiMail['smtp_user']    = 'reygestionfct@gmail.com';
-    $configMiMail['smtp_pass']    = 'Est0yas3acaba!';
+    $configMiMail['smtp_user']    = $cuenta->campo1;
+    $configMiMail['smtp_pass']    = $cuenta->campo2;
     $configMiMail['charset']    = 'utf-8';
     $configMiMail['newline']    = "\r\n";
     $configMiMail['mailtype'] = 'html'; // or text
@@ -14,7 +15,7 @@ function mandarMail($controlador,$message,$destinatario,$asunto){
 
     $controlador->load->library('email', $configMiMail);       
 
-    $controlador->email->from('reygestionfct@gmail.com', 'GestionFCT');
+    $controlador->email->from($cuenta->campo1, 'GestionFCT');
     $controlador->email->to($destinatario);
     $controlador->email->subject("GestiónFCT -".$asunto);
     $controlador->email->message($message);
