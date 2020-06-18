@@ -65,7 +65,7 @@ PRIMEROS PASOS APLICACIÓN
 
 SEXTA REUNIÓN (17 de junio de 2020)
 -----------------
-- [ ] Nombre grupo no pueda ser duplicado en el mismo curso acadçemico
+- [ ] Nombre grupo no pueda ser duplicado en el mismo curso académico (temporalmente con CSV)
 
 QUINTA REUNIÓN (9 de junio de 2020)
 -----------------
