@@ -20,7 +20,6 @@ PENDIENTE
 - <del>¿Distribución? dieferntes simulaciones/borradores y uno final (real/hipotético)</del>
 - Dashboard admin/auth acciones + estadísticas
 
-
 MODELO 1 - UML Simplificado
 -------
 ![Modelo1-uml-simplificado](https://yuml.me/danis1448/gestionfct_simplificado.jpg)
@@ -64,9 +63,13 @@ PRIMEROS PASOS APLICACIÓN
 	5. Poder ajustar fácilmente alumnos en empresas
 
 
-QUINTA REUNIÓN (9 de junio de 2020)
+SEXTA REUNIÓN (17 de junio de 2020)
 -----------------
 - [ ] Nombre grupo no pueda ser duplicado en el mismo curso acadçemico
+
+QUINTA REUNIÓN (9 de junio de 2020)
+-----------------
+- [ ] Nombre grupo no pueda ser duplicado en el mismo curso académico
 - [ ] Grupo duplicar solo los usuarios(profesores) sin alumnos
 - [ ] Método transporte para calcular la distancia en coche/transporte público
 - [ ] Google API guardado en la BBDD
