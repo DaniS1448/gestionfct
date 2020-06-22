@@ -28,6 +28,7 @@ class Alumno extends CI_Controller
             $direccion = isset($_POST["direccion"])?$_POST["direccion"]:null;
             $latitud = isset($_POST["latitud"])?$_POST["latitud"]:null;
             $longitud = isset($_POST["longitud"])?$_POST["longitud"]:null;
+            $metodoTransporte = isset($_POST["metodoTransporte"])?$_POST["metodoTransporte"]:null;
             
             $respuesta['estado']=false;
             $respuesta['mensaje']="";
@@ -36,7 +37,7 @@ class Alumno extends CI_Controller
                 $respuesta['mensaje']="El grupo no puede estar vacío";
             } else {
                 try {
-                    $this->alumno_model->c($idGrupo,$nombre,$apellido,$dni,$direccion,$latitud,$longitud);
+                    $this->alumno_model->c($idGrupo,$nombre,$apellido,$dni,$direccion,$latitud,$longitud,$metodoTransporte);
                     $respuesta['estado']=true;
                     $respuesta['mensaje']="Alumno $nombre creado correctamente";
                 }
@@ -54,6 +55,15 @@ class Alumno extends CI_Controller
             $dni = isset($_POST["dni"])?$_POST["dni"]:null;
             if($dni != null){
                 echo json_encode($this->alumno_model->existeDNI($dni));
+            }
+        }
+    }
+    
+    public function ajaxGetAlumnosByGrupoId(){
+        if(esAjax()){
+            $idGrupo = isset($_POST["idGrupo"])?$_POST["idGrupo"]:null;
+            if($idGrupo != null){
+                echo json_encode($this->alumno_model->getAlumnosByGrupoId($idGrupo));
             }
         }
     }

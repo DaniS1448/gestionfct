@@ -119,7 +119,7 @@ class Test extends CI_Controller {
     public function iniMunicipio(){
         $this->load->model('Municipio_model');
         foreach ([
-            ['San Fernando de Henares',"1"]
+            ['Torrejón de Ardoz',"1"]
         ] as $municipio){
             $this->Municipio_model->c($municipio[0],$municipio[1]);
         }
@@ -131,6 +131,18 @@ class Test extends CI_Controller {
         $instituto->nombre = "Test Insti con Municipio";
         $instituto->municipio = $municipio;
         R::store($instituto);
+    }
+    
+    public function inclauses(){
+        $ids = ['25','26'];
+        $alumnos = R::find('alumno',' id IN ('.R::genSlots($ids).') ', $ids);
+        foreach ($alumnos as $alumno){
+            //echo $alumno->nombre;
+        }
+        
+        echo "<pre>";
+        print_r($alumnos);
+        echo "</pre>";
     }
 }
 ?>

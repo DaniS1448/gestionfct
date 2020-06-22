@@ -2,7 +2,7 @@
 
 class Alumno_model extends CI_Model
 {
-    function c($idGrupo,$nombre,$apellido,$dni,$direccion,$latitud,$longitud){
+    function c($idGrupo,$nombre,$apellido,$dni,$direccion,$latitud,$longitud,$metodoTransporte){
         
         $usuario="usuario";
         if($dni!=""){
@@ -24,6 +24,8 @@ class Alumno_model extends CI_Model
             $alumno->n_matricula = null;
             $alumno->foto = null;
             $alumno->cv = null;
+            $alumno->distancia_opcional = false;
+            $alumno->metodo_transporte = $metodoTransporte;
             R::store($alumno);
             
             $grupo = R::load('grupo', $idGrupo);
@@ -46,6 +48,19 @@ class Alumno_model extends CI_Model
             $existe = true;
         }
         return $existe;
+    }
+    
+    function getAlumnosByGrupoId($idGrupo){
+        //return R::find('cursa',' grupo_id=?',[$idGrupo]);
+        $grupo = R::load('grupo', $idGrupo);
+        return $grupo-> aggr ( 'ownCursaList', 'alumno' );
+    }
+    function getAlumnoById($id){
+        return R::load('alumno', $id);
+    }
+    
+    function getAlumnosByIds($ids){
+        return R::find('alumno',' id IN ('.R::genSlots($ids).') ', $ids);
     }
 }
 ?>

@@ -148,6 +148,11 @@ class Usuario extends CI_Controller
                 } else {
                     try {
                         $this->usuario_model->c($nombre,$email,$pwd,false,$idsGrupo);
+                        //TODO no se manda el mail
+                        $usuario = $this->usuario_model->getUsuarioByEmail($email);
+                        $this->load->helper("mimail_helper");
+                        mandarMailActivacion($this,$usuario);
+                       
                         $respuesta['estado']=true;
                         $respuesta['mensaje']="Usuario $nombre creado correctamente";
                     }
@@ -161,12 +166,6 @@ class Usuario extends CI_Controller
             
             echo json_encode($respuesta);
         }
-    }
-    
-    public function ajaxCPostTest(){
-        $idsGrupo = isset($_POST['idsGrupo'])?$_POST['idsGrupo']:null;
-        
-        echo var_dump($idsGrupo);
     }
 
 }

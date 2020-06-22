@@ -23,7 +23,15 @@
                         </div>
                         <input type="hidden" class="place_loc_lat" name="latitud">
                         <input type="hidden" class="place_loc_long" name="longitud">
-                        <span class="text-danger" style="display:none"></span>
+                        
+                        <div class="form-group d-flex" style="margin-bottom: 0px;width: 100%;">
+                           	<label class="d-xl-flex align-items-center" for="metodoTransporte">Transporte: </label>
+                           	<select class="form-control" id="metodoTransporte" name="metodoTransporte">
+                               	<option value="driving" selected>En coche</option>
+                               	<option value="transit">Transporte público</option>
+                           	</select>
+                       </div>
+                       <span class="text-danger" style="display:none"></span>
                     </div>
                 </div>
                 <div style="padding-top: 26px;" onclick="addAlumno();"><i class="fa fa-plus-circle"></i><span style="padding-left: 9px;">Añadir más alumnos</span></div>
@@ -61,9 +69,10 @@ function crearAlumno(){
 			var direccion = $(this).find("input[name='direccion']").val();
 			var latitud = $(this).find("input[name='latitud']").val();
 			var longitud = $(this).find("input[name='longitud']").val();
+			var metodoTransporte = $(this).find("select[name='metodoTransporte']").val();
 			errGrupoAlumno = $(this).find("span:last");
 			
-			if(nombre=="" || apellido=="" || dni=="" || direccion=="" || latitud=="" || longitud==""){
+			if(nombre=="" || apellido=="" || dni=="" || direccion=="" || latitud=="" || longitud=="" || metodoTransporte==""){
 				todoOK=false;
 				errGrupoAlumno.show();
 				errGrupoAlumno.text("Debes completar todos los campos");
@@ -79,7 +88,8 @@ function crearAlumno(){
 			var direccion = $(this).find("input[name='direccion']").val();
 			var latitud = $(this).find("input[name='latitud']").val();
 			var longitud = $(this).find("input[name='longitud']").val();
-
+			var metodoTransporte = $(this).find("select[name='metodoTransporte']").val();
+			
 			if(todoOK){
 				var numAlumno = $(this).find(".numAlumno");
 				errGrupoAlumno = $(this).find("span:last");
@@ -91,6 +101,7 @@ function crearAlumno(){
 				datos+="&direccion="+direccion;
 				datos+="&latitud="+latitud;
 				datos+="&longitud="+longitud;
+				datos+="&metodoTransporte="+metodoTransporte;
 				var x = new XMLHttpRequest();
 
 				x.open("POST",

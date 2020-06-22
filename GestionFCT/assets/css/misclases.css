@@ -53,10 +53,14 @@
   background-color: rgba(244,244,244,0.71);
 }
 
+.alumno-elemento {
+  position: relative;
+}
+
 #asignacion-alumnos .lista-alumnos .handle-pos-alumno-aisgnado {
   position: absolute;
-  top: -5px;
-  left: -5px;
+  left: 4px;
+  top: 2px;
 }
 
 #asignacion-alumnos .lista-alumnos .handle-pos-alumno-no-aisgnado {

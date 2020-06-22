@@ -8,7 +8,7 @@
                <span class="text-danger" id="errCrearUsuarioEmail" style="display:none"></span>
                <input type="password" class="form-control" id="pwd" placeholder="Contreaseña" />
                <span class="text-danger" id="errCrearUsuarioPwd" style="display:none"></span>
-               <input type="password" class="form-control" id="nombre" placeholder="Nombre" />
+               <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
                <span class="text-danger" id="errCrearUsuarioNombre" style="display:none"></span>
                <div class="form-check mt-4">
                	<input type="checkbox" class="form-check-input" id="formCheckAdmin" onchange="toggleElementoById('divDatosNoAdmin');"/>

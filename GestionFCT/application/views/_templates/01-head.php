@@ -11,11 +11,6 @@
     <script src="<?=base_url()?>assets/js/popper.js"></script>
     <script src="<?=base_url()?>assets/js/bootstrap.js"></script>
     <script src="https://kit.fontawesome.com/80ba94c14a.js" crossorigin="anonymous"></script>
-<?php if (sizeof($scripts)>0):?>
-<?php foreach ($scripts as $script):?>
-    <script src="<?=base_url()?>assets/js/<?=$script?>.js"></script>
-<?php endforeach;?>
-<?php endif;?>
     <link rel="stylesheet" href="<?=base_url()?>assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/fonts/material-icons.min.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/fonts/font-awesome.min.css">

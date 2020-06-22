@@ -87,4 +87,50 @@ function getApiMaps(){
     return $cuenta->campo1;
 }
 
+function devolverSedeMasCercana($controlador,$origen,$mode){
+    //EMPRESAS
+    $controlador->load->model('empresa_model');
+    $empresas = $controlador->empresa_model->getEmpresasDesbloqueadas();
+    $destinos="";
+    $idsSedesOrden=[];
+    foreach ($empresas as $empresa){
+        foreach ($empresa->ownSedeList as $sede){
+            foreach ($sede->ownPrevisionpuestosList as $pp){
+                if($pp->cursoacademico->anyoini == getAnyoIni() && (int)$pp->numero > 0 ){
+                    $destinos.=$sede->latitud.",".$sede->longitud."|";
+                    $idsSedesOrden[]=$sede->id;
+                }
+            }
+        }
+        
+    }
+    $destinos = rtrim($destinos, '|');
+    
+    $key = getApiMaps();
+    $url="https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=$origen&destinations=$destinos&avoid=tolls&language=es-ES&mode=$mode&key=$key";
+    $ch = curl_init(); curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); curl_setopt($ch, CURLOPT_URL,$url); $result=curl_exec($ch); curl_close($ch);
+    $resultado = json_decode($result, true);
+    
+    if(isset($resultado['status']) && $resultado['status'] == 'OK'){
+        $clave=""; $distanceValue=0; $distancia="";$duracion="";
+        
+        foreach ($resultado['rows'][0]['elements'] as $k=>$v){
+            if($distanceValue==0){
+                $clave=$k;
+                $distanceValue=$v['distance']['value'];
+                $distancia=$v['distance']['text'];
+                $duracion = $v['duration']['text'];
+            } else {
+                if($v['distance']['value'] < $distanceValue){
+                    $clave=$k;
+                    $distanceValue=$v['distance']['value'];
+                    $distancia=$v['distance']['text'];
+                    $duracion = $v['duration']['text'];
+                }
+            }
+        }
+        return ['idSede' => $idsSedesOrden[$clave], 'distancia'=>$distancia, 'duracion'=>$duracion];
+    }
+}
+
 ?>

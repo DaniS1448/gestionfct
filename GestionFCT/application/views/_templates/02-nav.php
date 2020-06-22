@@ -14,12 +14,8 @@
          <li class="nav-item">
             <a class="nav-link" href="home/test">Test</a>
          </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#" onclick="$('#modalErrores').modal();">Modal JS Call</a>
-         </li>
       </ul>
       <ul class="nav navbar-nav ml-auto nav-flex-icons">
-      	<li class="nav-item" role="presentation"><a class="nav-link active" href="<?= base_url(); ?>cursoAcademico/c">Crear CA</a></li>
       	
          
          <?php if(isset($_SESSION['user'])):?>

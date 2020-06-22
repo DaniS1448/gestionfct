@@ -33,7 +33,7 @@
          </div>
       </div>
    </section>
-   <script>cargarGrupoDatos();</script>
+   <script>window.onload=function(){cargarGrupoDatos();}</script>
 </main>
 <script>
 
