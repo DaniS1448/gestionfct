@@ -28,8 +28,16 @@ class Asignar extends CI_Controller
                 $mode = $alumno->metodo_transporte;
                 
                 $arrResultado = devolverSedeMasCercana($this,$origen,$mode);
-
-                $this->Asignar_model->crearPractica($alumno->id,$arrResultado['idSede'],$arrResultado['distancia'],$arrResultado['duracion'],$_SESSION['user']->id,$idGrupo);
+                if($arrResultado['idSede']!=null){
+                    $this->Asignar_model->crearPractica($alumno->id,$arrResultado['idSede'],$arrResultado['distancia'],$arrResultado['duracion'],$_SESSION['user']->id,$idGrupo);
+                } else {
+                    session_start_seguro();
+                    $_SESSION['_msg']['tipo']="danger";
+                    $_SESSION['_msg']['texto']="No quedan sedes con puestos disponibles";
+                    $_SESSION['_msg']['uri']='/';
+                    redirect(base_url() . 'msg');
+                }
+                
 
             }
 

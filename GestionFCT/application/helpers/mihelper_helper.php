@@ -135,8 +135,11 @@ function devolverSedeMasCercana($controlador,$origen,$mode){
                 }
             }
         }
-        return ['idSede' => $idsSedesOrden[$clave], 'distancia'=>$distancia, 'duracion'=>$duracion];
+        $resultadoReturn = ['idSede' => $idsSedesOrden[$clave], 'distancia'=>$distancia, 'duracion'=>$duracion];
+    } else {
+        $resultadoReturn = ['idSede' => null];
     }
+    return $resultadoReturn;
 }
 
 ?>
