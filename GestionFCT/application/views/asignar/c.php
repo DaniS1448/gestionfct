@@ -68,7 +68,7 @@ function cargarAlumnos(url,datos){
 			for(opcion in respuesta){
 				var idAlumno = respuesta[opcion].id;
 				var nombreGrupo = respuesta[opcion].nombre;
-				alumnosCk.innerHTML+='<div class="form-check form-check-inline"><input class="form-check-input idsAlumnos" type="checkbox" name="idsAlumnos[]" id="idAlumno'+idAlumno+'" value="'+idAlumno+'"><label class="form-check-label" for="idAlumno'+idAlumno+'">'+nombreGrupo+'</label></div>';
+				alumnosCk.innerHTML+='<div class="form-check form-check-inline"><input class="form-check-input idsAlumnos" type="checkbox" name="idsAlumnos[]" id="idAlumno'+idAlumno+'" value="'+idAlumno+'" checked><label class="form-check-label" for="idAlumno'+idAlumno+'">'+nombreGrupo+'</label></div>';
 			}
 				
 		}

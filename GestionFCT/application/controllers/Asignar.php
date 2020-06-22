@@ -28,14 +28,9 @@ class Asignar extends CI_Controller
                 $mode = $alumno->metodo_transporte;
                 
                 $arrResultado = devolverSedeMasCercana($this,$origen,$mode);
-                //[idSede] => 3
-                //[distancia] => 6,7 km
-                //[duracion] => 10 min
+
                 $this->Asignar_model->crearPractica($alumno->id,$arrResultado['idSede'],$arrResultado['distancia'],$arrResultado['duracion'],$_SESSION['user']->id,$idGrupo);
-                
-//                 echo "<pre>";
-//                 print_r($arrResultado);
-//                 echo "</pre>";
+
             }
 
         } else {
@@ -47,19 +42,18 @@ class Asignar extends CI_Controller
         }
     }
     
-    public function cPostTest(){
-        $idGrupo = isset($_GET["idGrupo"])?$_GET["idGrupo"]:null;
-        $idsAlumno = isset($_GET["idsAlumnos"])?$_GET["idsAlumnos"]:[];
-        
-        echo print_r($idsAlumno);
-    }
-    
     public function paso1(){
         verificarRol();
-        
-        
+        $this->load->model('Anexo_model');
         $data['scripts']=['Sortable.min','asignar'];
+        $data['anexos']=$this->Anexo_model->getAnexosCursoActual();
         frame($this, "asignar/paso1",$data);
+    }
+    
+    public function mockup(){
+        verificarRol();
+        $data['scripts']=['Sortable.min','asignar'];
+        frame($this, "asignar/mockup",$data);
     }
 
 }

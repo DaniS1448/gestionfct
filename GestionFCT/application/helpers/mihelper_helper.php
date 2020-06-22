@@ -115,15 +115,21 @@ function devolverSedeMasCercana($controlador,$origen,$mode){
         $clave=""; $distanceValue=0; $distancia="";$duracion="";
         
         foreach ($resultado['rows'][0]['elements'] as $k=>$v){
+            $distanceValueSede = $v['distance']['value'];
+            /*
+            if($mode=="driving"){$distanceValueSede = $v['distance']['value'];}
+            else{$distanceValueSede = $v['duration']['value'];}
+            */
+            
             if($distanceValue==0){
                 $clave=$k;
-                $distanceValue=$v['distance']['value'];
+                $distanceValue=$distanceValueSede;
                 $distancia=$v['distance']['text'];
                 $duracion = $v['duration']['text'];
             } else {
                 if($v['distance']['value'] < $distanceValue){
                     $clave=$k;
-                    $distanceValue=$v['distance']['value'];
+                    $distanceValue=$distanceValueSede;
                     $distancia=$v['distance']['text'];
                     $duracion = $v['duration']['text'];
                 }

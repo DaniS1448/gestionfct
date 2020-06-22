@@ -9,7 +9,7 @@ class Asignar_model extends CI_Model
         $grupo = R::load('grupo', $idGrupo);
         $cursoAcademico = getCursoActual();
         $idCursoAcademico=$cursoAcademico->id;
-        $anexo = R::find('anexo','cursoacademico_id=? AND sede_id=?',[$idCursoAcademico,$idSede]);
+        $anexo = R::findOne('anexo','cursoacademico_id=? AND sede_id=?',[$idCursoAcademico,$idSede]);
         
         if($anexo==null){
             $anexo = R::dispense('anexo');
@@ -36,6 +36,10 @@ class Asignar_model extends CI_Model
         $practica->grupo = $grupo;
         $practica->alumno = $alumno;
         R::store($practica);
+        
+        $previsionPuestos = R::findOne('previsionpuestos','cursoacademico_id=? AND sede_id=?',[$idCursoAcademico,$idSede]);
+        $previsionPuestos->numero = (int)$previsionPuestos->numero - 1;
+        R::store($previsionPuestos);
     }
 }
 ?>
