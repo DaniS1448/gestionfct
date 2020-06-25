@@ -3,17 +3,17 @@
       <div class="container">
          <div class="about-me">
             <form>
-               <p>Crear nueva previsión puestos</p>
+               <p>Modificar previsión puestos</p>
                
                <div class="form-group mt-4">
                		<label for="selectFamiliaProfesional">Empresa</label>
                		<select class="form-control" id="selectEmpresa" name="idFamiliaProfesional" 
-               		onclick="cargarGrupoCadaDato('/sede/ajaxGetSedesByEmpresa','selectSede','direccion','idEmpresa='+this.value);"></select>
+               		onclick="cargarGrupoCadaDato('/sede/ajaxGetSedesByEmpresa','selectSede','direccion','idEmpresa='+this.value); setTimeout(function(){ cargarNumPuestos(); }, 1000);"></select>
                </div>
                
                <div class="form-group mt-4">
                		<label for="selectTitulacion">Sede</label>
-               		<select class="form-control" id="selectSede" name="idTitulacion"></select>
+               		<select class="form-control" id="selectSede" name="idTitulacion" onclick="cargarNumPuestos();"></select>
                		<span class="text-danger" id="errSede" style="display:none"></span>
                </div>
                
@@ -21,7 +21,7 @@
                <span class="text-danger" id="errNumPuestos" style="display:none"></span>
                
                <span class="text-success mt-2" id="okPrevision" style="display:none"></span>
-               <button class="btn btn-outline-primary mt-3" type="button" id="btn-crear-prevision" onclick="crearPrevision();">Crear</button>
+               <button class="btn btn-outline-primary mt-3" type="button" id="btn-crear-prevision" onclick="crearPrevision();">Modificar</button>
             </form>
          </div>
       </div>
@@ -60,7 +60,7 @@ function crearPrevision(){
 		var x = new XMLHttpRequest();
 
 		x.open("POST",
-				"/previsionpuestos/ajaxCPost",
+				"/provisionpuestos/ajaxUPost",
 				true);
 		x.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		x.setRequestHeader("X-Requested-With","XMLHttpRequest");
@@ -120,8 +120,24 @@ function cargarGrupoCadaDato(url,idSelect,campoText,datos=""){
 function cargarGrupoDatos(){
 	cargarGrupoCadaDato("/empresa/ajaxGetEmpresas","selectEmpresa","nombre");
 }
+
+function cargarNumPuestos(){
+	var x = new XMLHttpRequest();
+
+	x.open("POST", "/provisionpuestos/ajaxGetProvisionPuestosBySedeId", true);
+	x.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	x.setRequestHeader("X-Requested-With","XMLHttpRequest");
+	x.send('idSede='+document.getElementById("selectSede").value);
+	
+	x.onreadystatechange=function(){
+		if(x.readyState == 4 && x.status==200){
+			document.getElementById('numeroPrevision').value=x.responseText;
+		}
+	}
+}
 </script>
 <script>window.onload=function(){
 	cargarGrupoDatos();
 	setTimeout(function(){ cargarGrupoCadaDato('/sede/ajaxGetSedesByEmpresa','selectSede','direccion','idEmpresa='+document.getElementById("selectEmpresa").value); }, 500);
+	setTimeout(function(){ cargarNumPuestos(); }, 1000);
 }</script>

@@ -75,7 +75,7 @@ function crearEmpresa(){
 		errCIF.innerHTML="El campo CIF no puede estar vacío";
 	}
 
-	if(document.getElementById("direccionInstituto").value ==""){
+	if(document.getElementById("direccion").value ==""){
 		if(document.getElementById("nombreEmpresa").value!=""){ocultarElemento(errNombreEmpresa);}
 		if(document.getElementById("idMunicipio").value !=""){ocultarElemento(errMunicipioGrupo);}
 		if(document.getElementById("cifInstituto").value !=""){ocultarElemento(errCIF);}
@@ -88,7 +88,7 @@ function crearEmpresa(){
 		if(document.getElementById("nombreEmpresa").value!=""){ocultarElemento(errNombreEmpresa);}
 		if(document.getElementById("idMunicipio").value !=""){ocultarElemento(errMunicipioGrupo);}
 		if(document.getElementById("cifInstituto").value !=""){ocultarElemento(errCIF);}
-		if(document.getElementById("direccionInstituto").value !=""){ocultarElemento(errDireccion);}
+		if(document.getElementById("direccion").value !=""){ocultarElemento(errDireccion);}
 		ocultarElementos([okEmpresa]);
 		mostrarElemento(errTitulacionGrupo);
 		errTitulacionGrupo.innerHTML="El campo dirección no puede estar vacío";
@@ -96,7 +96,7 @@ function crearEmpresa(){
 	
 	
 	if(document.getElementById("nombreEmpresa").value!="" && document.getElementById("idMunicipio").value !=""
-		&& document.getElementById("cifInstituto").value !="" && document.getElementById("direccionInstituto").value !=""
+		&& document.getElementById("cifInstituto").value !="" && document.getElementById("direccion").value !=""
 		&& document.getElementById("selectTitulacion").value !=""){
 		
 		ocultarElementos([errNombreEmpresa,errMunicipioGrupo,errCIF,errDireccion,errTitulacionGrupo,okEmpresa]);

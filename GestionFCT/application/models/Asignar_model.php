@@ -22,24 +22,30 @@ class Asignar_model extends CI_Model
             $anexo->cursoacademico = $cursoAcademico;
             R::store($anexo);
         }
+        $administra = R::findOne('administra','usuario_id=? AND anexo_id=?',[$usuario->id,$anexo->id]);
+        if($administra==null){
+            $administra = R::dispense('administra');
+            $administra->usuario = $usuario;
+            $administra->anexo = $anexo;
+            R::store($administra);
+        }
         
-        $administra = R::dispense('administra');
-        $administra->usuario = $usuario;
-        $administra->anexo = $anexo;
-        R::store($administra);
-        
-        $practica = R::dispense('practica');
-        $practica->contratado = false;
-        $practica->distancia_trayecto = $distancia;
-        $practica->duracion_trayecto = $duracion;
-        $practica->anexo = $anexo;
-        $practica->grupo = $grupo;
-        $practica->alumno = $alumno;
-        R::store($practica);
-        
-        $previsionPuestos = R::findOne('previsionpuestos','cursoacademico_id=? AND sede_id=?',[$idCursoAcademico,$idSede]);
-        $previsionPuestos->numero = (int)$previsionPuestos->numero - 1;
-        R::store($previsionPuestos);
+        $practica = R::findOne('practica','alumno_id=? AND grupo_id=?',[$alumno->id,$grupo->id]);
+        if($practica==null){
+            $practica = R::dispense('practica');
+            $practica->contratado = false;
+            $practica->distancia_trayecto = $distancia;
+            $practica->duracion_trayecto = $duracion;
+            $practica->anexo = $anexo;
+            $practica->grupo = $grupo;
+            $practica->alumno = $alumno;
+            R::store($practica);
+            
+            $previsionPuestos = R::findOne('provisionpuestos','cursoacademico_id=? AND sede_id=?',[$idCursoAcademico,$idSede]);
+            $previsionPuestos->numero = (int)$previsionPuestos->numero - 1;
+            R::store($previsionPuestos);
+        }
+
     }
 }
 ?>

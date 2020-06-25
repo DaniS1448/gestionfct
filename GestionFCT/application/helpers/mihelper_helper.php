@@ -95,7 +95,7 @@ function devolverSedeMasCercana($controlador,$origen,$mode){
     $idsSedesOrden=[];
     foreach ($empresas as $empresa){
         foreach ($empresa->ownSedeList as $sede){
-            foreach ($sede->ownPrevisionpuestosList as $pp){
+            foreach ($sede->ownProvisionpuestosList as $pp){
                 if($pp->cursoacademico->anyoini == getAnyoIni() && (int)$pp->numero > 0 ){
                     $destinos.=$sede->latitud.",".$sede->longitud."|";
                     $idsSedesOrden[]=$sede->id;

@@ -62,5 +62,14 @@ class Alumno_model extends CI_Model
     function getAlumnosByIds($ids){
         return R::find('alumno',' id IN ('.R::genSlots($ids).') ', $ids);
     }
+    
+    function existePracticaCursoActual($idGrupo, $idAlumno){
+        
+        $existe = false;
+        if(R::findOne('practica','grupo_id=? AND alumno_id=?',[$idGrupo,$idAlumno]) != null){
+            $existe = true;
+        }
+        return $existe;
+    }
 }
 ?>

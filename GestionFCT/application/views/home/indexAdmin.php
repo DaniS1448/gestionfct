@@ -14,7 +14,8 @@
                 <a class="btn btn-outline-primary" role="button" href="/alumno/c">Crear Alumnos</a>
                 <a class="btn btn-outline-primary" role="button" href="/empresa/c">Crear Empresa</a>
                 <a class="btn btn-outline-primary" role="button" href="/sede/c">Crear Sede</a>
-                <a class="btn btn-outline-primary" role="button" href="/previsionpuestos/c">Crear Previsión Puestos</a>
+                <a class="btn btn-outline-primary" role="button" href="/provisionpuestos/c">Crear Provisión Puestos</a>
+                <a class="btn btn-outline-primary" role="button" href="/provisionpuestos/u">Modificar Provisión Puestos</a>
             </div>
         </section>
 </main>
