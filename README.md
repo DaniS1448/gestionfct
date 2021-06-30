@@ -143,3 +143,11 @@ PRIMERA REUNIÓN (12 de mayo de 2020)
 
 ###### EJEMPLO INSTITUTO (Rey Fernando VI)
 ![EjemploInstitutoo](https://github.com/DaniS1448/gestionfct/blob/master/instituto.PNG)
+
+###### DEMO APLICACIONES (25 jun 2020)
+Demo GestionFCT - APP: https://youtu.be/Zc3vDIzFK4s
+Demo GestionFCT - Mockup: : https://youtu.be/9z__H6XsHgU
+
+# [yuml!](https://yuml.me/)
+https://github.com/DaniS1448/gestionfct/blob/master/gestionfct.txt
+https://github.com/DaniS1448/gestionfct/blob/master/gestionfct_simplificado.txt
