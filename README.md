@@ -1,7 +1,5 @@
 # gestionfct
 
-# [Mockup!](http://gestionfct.ga/)
-
 NECESITO
 ---------
 	- [ ] Necesito excel ejemplo con los alumnos de otro sitio (Leticia de la lista de alumnos del centro)
@@ -22,11 +20,11 @@ PENDIENTE
 
 MODELO 1 - UML Simplificado
 -------
-![Modelo1-uml-simplificado](https://yuml.me/danis1448/gestionfct_simplificado.jpg)
+![Modelo1-uml-simplificado](https://github.com/DaniS1448/gestionfct/blob/master/gestionfct_simplificado.jpg)
 
 MODELO 1 - UML Completo
 -------
-![Modelo1-uml-completo](https://yuml.me/danis1448/gestionfct.jpg)
+![Modelo1-uml-completo](https://github.com/DaniS1448/gestionfct/blob/master/gestionfct.jpg)
 
 FUNCIONALIDADES (marcadas las posibles con el modelo 1 completo)
 ------------------
